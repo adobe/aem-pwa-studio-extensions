@@ -1,0 +1,10 @@
+{
+  "name": "@adobe/aem-pwa-studio-extensions",
+  "version": "0.0.1",
+  "description": "AEM Extensions for the Magento PWA Studio apps",
+  "main": "index.js",
+  "repository": "https://github.com/adobe/aem-pwa-studio-extensions",
+  "author": "Adobe, Inc.",
+  "license": "Apache-2.0",
+  "private": true
+}
