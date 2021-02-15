@@ -1,0 +1,26 @@
+query getProducts($sku: String!) {
+    products(filter: { sku: { eq: $sku } }) {
+        items {
+            sku
+            name
+            price_range {
+                minimum_price {
+                    final_price {
+                        value
+                        currency
+                    }
+                }
+                maximum_price {
+                    final_price {
+                        value
+                        currency
+                    }
+                }
+            }
+            media_gallery {
+                url
+                label
+            }
+        }
+    }
+}

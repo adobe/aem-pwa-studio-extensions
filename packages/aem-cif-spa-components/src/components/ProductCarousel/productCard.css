@@ -1,0 +1,14 @@
+.productcard {
+    float: left;
+}
+.productcard-image {
+    height: 243px;
+}
+
+.card {
+    border: 10px solid #fff;
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    width: 15pc;
+}

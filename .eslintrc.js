@@ -1,7 +1,11 @@
+// eslint-disable-next-line header/header
 const headerBlock = [
     '******************************************************************************',
     ' *',
-    {pattern: ' *    Copyright 20\\d{2} Adobe. All rights reserved.'},
+    {
+        pattern: ' *    Copyright 20\\d{2} Adobe. All rights reserved.',
+        template: ' *    Copyright 2020 Adobe. All rights reserved.',
+    },
     ' *    This file is licensed to you under the Apache License, Version 2.0 (the "License");',
     ' *    you may not use this file except in compliance with the License. You may obtain a copy',
     ' *    of the License at http://www.apache.org/licenses/LICENSE-2.0',
@@ -14,34 +18,15 @@ const headerBlock = [
     ' *****************************************************************************',
 ];
 
+// eslint-disable-next-line no-undef
 module.exports = {
-    settings: {
-        react: {
-            version: 'detect',
-        },
-    },
-    env: {
-        browser: true,
-        es6: true,
-    },
-    extends: ['eslint:recommended', 'plugin:react/recommended'],
+    extends: ['@magento'],
     parser: 'babel-eslint',
-    globals: {
-        Atomics: 'readonly',
-        SharedArrayBuffer: 'readonly',
-        process: true,
-    },
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
-        ecmaVersion: 2018,
-        sourceType: 'module',
-    },
-    plugins: ['react', 'react-hooks', 'header'],
+    plugins: ['header'],
     rules: {
+        'no-useless-escape': 'off',
         'no-console': ['warn', {allow: ['error', 'warn']}],
-        'no-undef': 'error',
+        'no-undef': 'off',
         'no-unused-vars': 'warn',
         'header/header': [2, 'block', headerBlock],
         'no-var': 'error',
@@ -50,5 +35,6 @@ module.exports = {
         // override the default which is more restrictive
         'react/prop-types': ['warn', {ignore: ['children']}],
         strict: ['error', 'global'],
+        'jest/valid-describe': 'off',
     },
 };

@@ -1,0 +1,45 @@
+.title {
+    font-size: 40px !important;
+    font-weight: 600 !important;
+    max-width: 25pc;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 1.25em;
+    letter-spacing: 0.32px;
+    opacity: 1;
+}
+
+.description {
+    margin-bottom: 1rem;
+    line-height: 1.5em;
+    font-size: 14px;
+}
+
+.content {
+    margin-top: -500px;
+    height: 300px;
+    min-height: 300px;
+    float: left;
+    position: relative;
+    width: 574px;
+    margin-left: 133px;
+}
+
+.image {
+}
+
+.actionLink {
+    align-items: center;
+    border-radius: 1.25rem;
+    display: inline-flex;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    height: 2.5rem;
+    justify-content: center;
+    letter-spacing: 0.25px;
+    margin-right: 0.75rem;
+    margin-top: 0.75rem;
+    min-width: 12rem;
+    text-decoration: none !important;
+    text-transform: uppercase;
+}

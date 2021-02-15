@@ -1,0 +1,10 @@
+query GetCategories($ids: [String]!) {
+    categories(filters: { ids: { in: $ids } }) {
+        items {
+            id
+            image
+            url_path
+            name
+        }
+    }
+}
