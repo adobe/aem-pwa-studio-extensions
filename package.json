@@ -6,5 +6,21 @@
   "repository": "https://github.com/adobe/aem-pwa-studio-extensions",
   "author": "Adobe, Inc.",
   "license": "Apache-2.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "spa-components": "yarn workspace @adobe/aem-cif-spa-components",
+    "lint": "yarn workspaces foreach run lint"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
 }

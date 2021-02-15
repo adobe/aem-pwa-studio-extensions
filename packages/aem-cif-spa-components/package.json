@@ -1,0 +1,18 @@
+{
+  "name": "@adobe/aem-cif-spa-components",
+  "version": "0.1-SNAPSHOT",
+  "module": "./dist/index.js",
+  "scripts": {
+    "lint": "eslint --ignore-path '../../.gitignore' 'src/**/{*.js,package.json}'"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
+    "webpack": "^5.21.2"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
