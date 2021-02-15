@@ -11,4 +11,4 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-export { default, ProductTeaserEditConfig } from './teaser';
+export {default as ProductTeaser, ProductTeaserEditConfig} from './teaser';

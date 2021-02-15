@@ -11,7 +11,7 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-// export {default} from './components/ContentTeaser';
+export {ContentTeaser, ContentTeaserEditConfig} from './components/ContentTeaser';
 export {FeaturedCategories, FeaturedCategoriesEditConfig} from './components/FeaturedCategories';
-// export {ProductCarousel, ProductCarouselEditConfig} from './components/ProductCarousel';
-// export {ProductTeaser, ProductTeaserEditConfig} from './components/ProductTeaser';
+export {ProductCarousel, ProductCarouselEditConfig} from './components/ProductCarousel';
+export {ProductTeaser, ProductTeaserEditConfig} from './components/ProductTeaser';

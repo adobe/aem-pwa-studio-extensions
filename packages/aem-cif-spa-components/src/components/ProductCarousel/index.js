@@ -11,4 +11,4 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-export { default, ProductCarouselEditConfig } from './productCarousel';
+export {default as ProductCarousel, ProductCarouselEditConfig} from './productCarousel';

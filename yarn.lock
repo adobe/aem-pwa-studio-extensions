@@ -20,6 +20,7 @@ __metadata:
     "@babel/preset-env": ^7.3.4
     "@babel/preset-react": ^7.12.13
     "@magento/babel-preset-peregrine": ^1.1.0
+    "@magento/pagebuilder": ^4.0.1
     "@magento/peregrine": ^9.0.0
     "@magento/pwa-buildpack": ^8.0.1
     "@magento/venia-ui": ^6.0.1
@@ -35,6 +36,7 @@ __metadata:
     prop-types: ^15.7.2
     react: ^16.8.0
     react-dom: ^16.8.0
+    react-intl: ^5.7.0
     style-loader: ^2.0.0
     webpack: ^4.41.2
     webpack-node-externals: ^2.5.2
@@ -1382,6 +1384,72 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formatjs/ecma402-abstract@npm:1.5.2":
+  version: 1.5.2
+  resolution: "@formatjs/ecma402-abstract@npm:1.5.2"
+  dependencies:
+    tslib: ^2.0.1
+  checksum: 525af670a5e5a085810a8e62ab8f9bf8c3feff168b676ee9c60ef1409e4eb310679f5911ae72ff1c74230df0bbf59bed5d2c33cbd73ca06d023a61d96ddd4295
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-datetimeformat@npm:3.2.7":
+  version: 3.2.7
+  resolution: "@formatjs/intl-datetimeformat@npm:3.2.7"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    tslib: ^2.0.1
+  checksum: 6d955dee6572bdc08988c38443aa957d9bb6865c6970bb11dc0734532b50a5d5149fee0e94df21238918bc8c2a7c452dc1c343a53ce060bf691a762d85db0797
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-displaynames@npm:4.0.5":
+  version: 4.0.5
+  resolution: "@formatjs/intl-displaynames@npm:4.0.5"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    tslib: ^2.0.1
+  checksum: c72d480e5f7cac84fba1354f12f937717bad9d80873f0a50c5d7cd73dce1a80a88240a740ff39c8a3e87037337bbd5b626450b4bf616e7d77df313618ff4ddf1
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-listformat@npm:5.0.5":
+  version: 5.0.5
+  resolution: "@formatjs/intl-listformat@npm:5.0.5"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    tslib: ^2.0.1
+  checksum: 81ce6457d5824cacffa4636e77a3bc37f85ce879bd18a9521ecad2e7c0c2633d11007d57b3f00dcfeeb9e52c41b5658a1c8c47688c9c0cce06732aa972025573
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-relativetimeformat@npm:8.0.4":
+  version: 8.0.4
+  resolution: "@formatjs/intl-relativetimeformat@npm:8.0.4"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    tslib: ^2.0.1
+  checksum: a17e433adf7a549c9c37f739d6ac9fecad43817d69e1b128b75c1ea75f685383a2cb07284478f7e6c7d49aea837bfbcbcbc234638937fcf02e25393183f829b3
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl@npm:1.6.8":
+  version: 1.6.8
+  resolution: "@formatjs/intl@npm:1.6.8"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    "@formatjs/intl-datetimeformat": 3.2.7
+    "@formatjs/intl-displaynames": 4.0.5
+    "@formatjs/intl-listformat": 5.0.5
+    "@formatjs/intl-relativetimeformat": 8.0.4
+    fast-memoize: ^2.5.2
+    intl-messageformat: 9.4.7
+    intl-messageformat-parser: 6.3.2
+    tslib: ^2.0.1
+  checksum: 597a1de929e8f433b91e5d4f3f2ebd5df8c4398025e4c27f87f82dfc508f575b73d4df0211de3e942861bfa695a312f10448a261ff098c559ce5c0e7d069f33c
+  languageName: node
+  linkType: hard
+
 "@graphql-typed-document-node/core@npm:^3.0.0":
   version: 3.1.0
   resolution: "@graphql-typed-document-node/core@npm:3.1.0"
@@ -1437,6 +1505,25 @@ __metadata:
     eslint-plugin-react: ^7.5.1
     eslint-plugin-react-hooks: ^1.6.0
   checksum: acf9def24a864ef766cb9738f8921767b12e2253f9343be6d950c05e31f432ca48d53bc1eaf6defb6ab71dec1b09403d16950f78a5263cd6e004db403157fa01
+  languageName: node
+  linkType: hard
+
+"@magento/pagebuilder@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@magento/pagebuilder@npm:4.0.1"
+  peerDependencies:
+    "@apollo/client": ~3.1.2
+    "@magento/babel-preset-peregrine": ~1.1.0
+    "@magento/peregrine": ~9.0.0
+    "@magento/pwa-buildpack": ~8.0.1
+    "@magento/venia-ui": ~6.0.1
+    jarallax: ~1.11.1
+    load-google-maps-api: ~2.0.1
+    lodash.escape: ~4.0.1
+    react: ~16.9.0
+    react-slick: ~0.25.2
+    react-tabs: ~3.1.0
+  checksum: b5e7f80aa608cbe86246d7d3fdfe3a45a591fc73ebc6509d8c5c341e88dff38f4370d7839a4c6a861f5854abbc415c31b378f1509fef5251199e259538fbb227
   languageName: node
   linkType: hard
 
@@ -1700,6 +1787,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 16ab4c45d4920fa378c8be76554b10061247fc04d2c8af11bdb7d520b3967e9c06d7ad5efd9b0f1657fbc4d095f62c6e1325f03b9141eb1ef2c8095b96fd42f8
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.6":
   version: 7.0.7
   resolution: "@types/json-schema@npm:7.0.7"
@@ -1741,6 +1838,23 @@ __metadata:
   version: 8.10.66
   resolution: "@types/node@npm:8.10.66"
   checksum: d4f105d5c90fb4ed7437e136b47c0972c937aa680fb0b6665ff8fc1307796a42355417146e045873e83af3f7c0ac70b009442bad3a33c9023001be38ff47c7af
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:*":
+  version: 15.7.3
+  resolution: "@types/prop-types@npm:15.7.3"
+  checksum: bd0eab69d5120ad3784d0c9985f902653d5924707a7f2b3702a330e762dfd61b6494954cb54ad0c52b918ffd6f1e7e27c9270e4442bc15250de348596f2f60cb
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*":
+  version: 17.0.2
+  resolution: "@types/react@npm:17.0.2"
+  dependencies:
+    "@types/prop-types": "*"
+    csstype: ^3.0.2
+  checksum: de1cd27ce57a961379978f83676d60d88bf729337683d1d4cb22dd8f285ed4200db19f7243052dc67c80133fe6798da1497456fe6f67a5bba5f5e30ce2544bfa
   languageName: node
   linkType: hard
 
@@ -3583,6 +3697,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csstype@npm:^3.0.2":
+  version: 3.0.6
+  resolution: "csstype@npm:3.0.6"
+  checksum: ebdca96d26e1af5604658e6876af29ac1e218750efb587684f2b2b13bb062a397b351586d285f911e6985e03112e56c2aee127d35ae7354cc7d25f3000e22556
+  languageName: node
+  linkType: hard
+
 "cyclist@npm:^1.0.1":
   version: 1.0.1
   resolution: "cyclist@npm:1.0.1"
@@ -4616,6 +4737,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-memoize@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "fast-memoize@npm:2.5.2"
+  checksum: 88bd91488039c0e04131d5382b8ea084268f144ce14ab36c360dd04f7792ac0c419e125b0fe6e6f41e77f03d1f703b31697475b2e95889ca86510623e2f0d904
+  languageName: node
+  linkType: hard
+
 "fast-redact@npm:^3.0.0":
   version: 3.0.0
   resolution: "fast-redact@npm:3.0.0"
@@ -5374,7 +5502,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -5594,6 +5722,27 @@ fsevents@~2.3.1:
   version: 2.2.0
   resolution: "interpret@npm:2.2.0"
   checksum: c89b6aa67f6957ab57e3f12c406043ea6a8a00bfd4b36bdb914080a973574bee40e25afc0b162bcab9793e39744c90cc03e23150a79ad6a4b9ea31291a23ced4
+  languageName: node
+  linkType: hard
+
+"intl-messageformat-parser@npm:6.3.2":
+  version: 6.3.2
+  resolution: "intl-messageformat-parser@npm:6.3.2"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    tslib: ^2.0.1
+  checksum: 1dd88443aa0859a79ef6c06ffc88d6b9a8f403f1de2fff445577e433f325cc59b1dff5098fe8fde7966c17114c0d6b670c02dd3d104d1b8fd11c938da1fb01f0
+  languageName: node
+  linkType: hard
+
+"intl-messageformat@npm:9.4.7":
+  version: 9.4.7
+  resolution: "intl-messageformat@npm:9.4.7"
+  dependencies:
+    fast-memoize: ^2.5.2
+    intl-messageformat-parser: 6.3.2
+    tslib: ^2.0.1
+  checksum: 579d34d243d78d20fbea293f140715cb08698148c7a6a584b44632d33bfabdb80b3c180c22d9ac7a8664283366771e617477db5366daf0507428a5c14c119564
   languageName: node
   linkType: hard
 
@@ -8167,6 +8316,32 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"react-intl@npm:^5.7.0":
+  version: 5.12.3
+  resolution: "react-intl@npm:5.12.3"
+  dependencies:
+    "@formatjs/ecma402-abstract": 1.5.2
+    "@formatjs/intl": 1.6.8
+    "@formatjs/intl-displaynames": 4.0.5
+    "@formatjs/intl-listformat": 5.0.5
+    "@formatjs/intl-relativetimeformat": 8.0.4
+    "@types/hoist-non-react-statics": ^3.3.1
+    fast-memoize: ^2.5.2
+    hoist-non-react-statics: ^3.3.2
+    intl-messageformat: 9.4.7
+    intl-messageformat-parser: 6.3.2
+    shallow-equal: ^1.2.1
+    tslib: ^2.0.1
+  peerDependencies:
+    react: ^16.3.0 || 17
+    typescript: 4
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 9ce1bcdf207016afcada4eba1eda62d715df8ebcaab24cc0939e1a96abbf58a3350b5ee41180fdf8addcf826568116aec1233b6f854cac5b67686e17fcaba0e8
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.7.0, react-is@npm:^16.8.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -8802,6 +8977,13 @@ fsevents@~2.3.1:
   dependencies:
     kind-of: ^6.0.2
   checksum: e329e054c286f0681fd8a9e5c353999519332f12510a99e189ea9cfa0337adb6f1414639d44493418ef6790a693b78c354525269f5db25a9feddd8b4d7891a62
+  languageName: node
+  linkType: hard
+
+"shallow-equal@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "shallow-equal@npm:1.2.1"
+  checksum: 5002ac4a3639e35782d3cb21073d48e1e4f85321cc54608f48b2331f6db6d54e4f4b44ed81ec4d75385ebe893e8286752b1e29595381e6adad72dd836f001b7f
   languageName: node
   linkType: hard
 
@@ -9637,6 +9819,13 @@ fsevents@~2.3.1:
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: f44fe7f216946b17d3e3074df3746372703cf24e9127b4c045511456e8e4bf25515fb0a1bb3937676cc305651c5d4fcb6377b0588a4c6a957e748c4c28905d17
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.1":
+  version: 2.1.0
+  resolution: "tslib@npm:2.1.0"
+  checksum: d8f5bdd067611651c6b846c2388f4dc8ba1f5af124e66105f5263d1ad56da17f4b8c6566887ca2f205c5a9758451871ceca87d5d06087af2dca1699c5e33db69
   languageName: node
   linkType: hard
 
