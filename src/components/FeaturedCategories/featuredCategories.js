@@ -12,8 +12,8 @@
  *
  ******************************************************************************/
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { any, arrayOf, bool, shape, string } from 'prop-types';
+import {useQuery} from '@apollo/client';
+import {any, arrayOf, bool, shape, string} from 'prop-types';
 
 import LoadingIndicator from '@magento/venia-ui/lib/components/LoadingIndicator';
 
@@ -23,21 +23,20 @@ import classes from './featuredCategories.css';
 
 export const FeaturedCategoriesEditConfig = {
     emptyLabel: 'Featured categories',
-    isEmpty: props => {
+    isEmpty: (props) => {
         const isEmpty = props.categoryItems.length === 0;
         return isEmpty;
     },
-    resourceType:
-        'core/cif/components/commerce/featuredcategorylist/v1/featuredcategorylist'
+    resourceType: 'core/cif/components/commerce/featuredcategorylist/v1/featuredcategorylist',
 };
 
-const FeaturedCategories = props => {
-    const { categoryItems, title } = props;
+const FeaturedCategories = (props) => {
+    const {categoryItems, title} = props;
 
-    const { data, loading, error } = useQuery(getCategoryByIds, {
+    const {data, loading, error} = useQuery(getCategoryByIds, {
         variables: {
-            ids: categoryItems.map(item => item.categoryIdentifier.value)
-        }
+            ids: categoryItems.map((item) => item.categoryIdentifier.value),
+        },
     });
 
     if (loading) {
@@ -53,29 +52,17 @@ const FeaturedCategories = props => {
         return null;
     }
 
-    const getOverlayImage = id => {
-        const item = categoryItems.find(
-            item => item.categoryIdentifier.value === id.toString()
-        );
-        return item && item.assetPath !== null
-            ? `${AEM_URL}${item.assetPath}`
-            : '';
+    const getOverlayImage = (id) => {
+        const item = categoryItems.find((item) => item.categoryIdentifier.value === id.toString());
+        return item && item.assetPath !== null ? `${AEM_URL}${item.assetPath}` : '';
     };
 
     return (
         <div className={classes.root}>
-            <div className={classes.header}>
-                {title && <h2 class={classes.title}>{title}</h2>}
-            </div>
+            <div className={classes.header}>{title && <h2 class={classes.title}>{title}</h2>}</div>
             <div className={classes.content}>
-                {categories.map(item => {
-                    return (
-                        <CategoryListItem
-                            key={item.id}
-                            {...item}
-                            assetPath={getOverlayImage(item.id)}
-                        />
-                    );
+                {categories.map((item) => {
+                    return <CategoryListItem key={item.id} {...item} assetPath={getOverlayImage(item.id)} />;
                 })}
             </div>
         </div>
@@ -88,13 +75,13 @@ FeaturedCategories.propTypes = {
             categoryIdentifier: shape({
                 type: string.isRequired,
                 value: any.isRequired,
-                entityType: string.isRequired
+                entityType: string.isRequired,
             }).isRequired,
-            assetPath: string
+            assetPath: string,
         })
     ),
     title: string,
-    configured: bool
+    configured: bool,
 };
 
 export default FeaturedCategories;

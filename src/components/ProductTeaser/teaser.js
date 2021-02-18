@@ -12,31 +12,28 @@
  *
  ******************************************************************************/
 import React from 'react';
-import { oneOf, string } from 'prop-types';
-import { useQuery } from '@apollo/client';
-import LoadingIndicator from '@magento/venia-ui/lib/components/LoadingIndicator';
-import Button from '@magento/venia-ui/lib/components/Button';
-import Image from '@magento/venia-ui/lib/components/Image';
+import {oneOf, string} from 'prop-types';
+import {useQuery} from '@apollo/client';
 import classes from './teaser.css';
 import getProductBySku from './getProductsBySku.graphql';
 
 export const ProductTeaserEditConfig = {
     emptyLabel: 'ProductTeaser',
-    isEmpty: props => {
+    isEmpty: (props) => {
         return !props || !props.sku || props.sku.length === 0;
     },
-    resourceType: 'venia/components/commerce/productteaser'
+    resourceType: 'venia/components/commerce/productteaser',
 };
 
-const ProductTeaser = ({ sku, callToAction, ctaText }) => {
+const ProductTeaser = ({sku, callToAction, ctaText}) => {
     console.log(`Got sku ${sku}, retrieving product`);
 
-    const { data, loading, error } = useQuery(getProductBySku, {
-        variables: { sku }
+    const {data, loading, error} = useQuery(getProductBySku, {
+        variables: {sku},
     });
 
     if (loading) {
-        return <LoadingIndicator />;
+        return <p>Still loading</p>;
     }
 
     if (error) {
@@ -47,15 +44,15 @@ const ProductTeaser = ({ sku, callToAction, ctaText }) => {
         return <p>No data received from Magento</p>;
     }
 
-    const { items } = data.products;
-    const { name, media_gallery, price_range } = items[0];
+    const {items} = data.products;
+    const {name, media_gallery, price_range} = items[0];
     const {
         maximum_price: {
-            final_price: { value: maxAmount, currency }
+            final_price: {value: maxAmount, currency},
         },
         minimum_price: {
-            final_price: { value: minAmount }
-        }
+            final_price: {value: minAmount},
+        },
     } = price_range;
 
     const addToCartHandler = () => {
@@ -79,15 +76,13 @@ const ProductTeaser = ({ sku, callToAction, ctaText }) => {
             <div className={classes.badge}>
                 <span>{'New'}</span>
             </div>
-            <Image classes={classes} src={media_gallery[0].url} alt={name} />
+            <img classes={classes} src={media_gallery[0].url} alt={name} />
             <span>{items[0].name}</span>
-            <div className={classes.price}>
-                {`From ${currency} ${minAmount} to ${currency} ${maxAmount}`}
-            </div>
+            <div className={classes.price}>{`From ${currency} ${minAmount} to ${currency} ${maxAmount}`}</div>
             <div className={classes.cta}>
-                <Button priority={'high'} onClick={handler}>
+                <button priority={'high'} onClick={handler}>
                     {ctaText}
-                </Button>
+                </button>
             </div>
         </div>
     );
@@ -96,7 +91,7 @@ const ProductTeaser = ({ sku, callToAction, ctaText }) => {
 ProductTeaser.propTypes = {
     sku: string.isRequired,
     callToAction: oneOf(['add-to-cart', 'details', '']).isRequired,
-    ctaText: string.isRequired
+    ctaText: string.isRequired,
 };
 
 export default ProductTeaser;

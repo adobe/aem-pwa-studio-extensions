@@ -16,8 +16,8 @@ import Price from '@magento/peregrine';
 
 import classes from './productCard.css';
 
-const ProductCard = props => {
-    const { title } = props;
+const ProductCard = (props) => {
+    const {title} = props;
     return (
         <div aria-role="displaycard" className={`card ${classes.productcard}`}>
             <a href="#">
@@ -25,7 +25,7 @@ const ProductCard = props => {
                     <img className="product__image" src="" alt={title} />
                 </div>
                 <div>{title}</div>
-                <Price />
+                <div>Price placeholder</div>
             </a>
         </div>
     );

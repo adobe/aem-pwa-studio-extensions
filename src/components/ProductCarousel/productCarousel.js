@@ -11,22 +11,20 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import { string, arrayOf, shape } from 'prop-types';
+import {string, arrayOf, shape} from 'prop-types';
 import React from 'react';
-import Products from '@magento/pagebuilder/lib/ContentTypes/Products';
 
 const ProductCarouselEditConfig = {
-    isEmpty: props => {
+    isEmpty: (props) => {
         return !props.productIdenfiers || props.productIdenfiers.length === 0;
     },
-    resourceType:
-        'core/cif/components/commerce/productcarousel/v1/productcarousel'
+    resourceType: 'core/cif/components/commerce/productcarousel/v1/productcarousel',
 };
 
-const ProductCarousel = props => {
-    const { productIdentifiers } = props;
+const ProductCarousel = (props) => {
+    const {productIdentifiers} = props;
 
-    const skus = productIdentifiers.map(item => item.commerceIdentifier.value);
+    const skus = productIdentifiers.map((item) => item.commerceIdentifier.value);
 
     console.log(`Got skus `, skus);
 
@@ -35,10 +33,11 @@ const ProductCarousel = props => {
         dots: true,
         infinite: true,
         skus,
-        appearance: 'carousel'
+        appearance: 'carousel',
     };
 
-    return <Products {...carouselSettings} />;
+    //  return <Products {...carouselSettings} />;
+    return <div>This will be the product carousel</div>;
 };
 
 ProductCarousel.propTypes = {
@@ -48,11 +47,11 @@ ProductCarousel.propTypes = {
             commerceIdentifier: shape({
                 entityType: string.isRequired,
                 value: string.isRequired,
-                type: string.isRequired
-            }).isRequired
+                type: string.isRequired,
+            }).isRequired,
         })
-    )
+    ),
 };
 
-export { ProductCarouselEditConfig };
+export {ProductCarouselEditConfig};
 export default ProductCarousel;

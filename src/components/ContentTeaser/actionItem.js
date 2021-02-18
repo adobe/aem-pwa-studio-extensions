@@ -11,29 +11,28 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import React, { useEffect, useState } from 'react';
-import { string, shape } from 'prop-types';
-import { useLazyQuery } from '@apollo/client';
-import Button from '@magento/venia-ui/lib/components/Button';
+import React, {useEffect, useState} from 'react';
+import {string, shape} from 'prop-types';
+import {useLazyQuery} from '@apollo/client';
 
 import getCategoryById from './getCategoryById.graphql';
-const ActionItem = props => {
-    const { title, entityIdentifier } = props;
+const ActionItem = (props) => {
+    const {title, entityIdentifier} = props;
 
     const [runCategoryQuery, result] = useLazyQuery(getCategoryById);
-    const { data } = result;
+    const {data} = result;
 
     const [actionUrl, setActionUrl] = useState('#');
 
     useEffect(() => {
         if (entityIdentifier && entityIdentifier.entityType === 'CATEGORY') {
-            runCategoryQuery({ variables: { id: entityIdentifier.value } });
+            runCategoryQuery({variables: {id: entityIdentifier.value}});
         }
     }, [entityIdentifier, runCategoryQuery]);
 
     useEffect(() => {
         if (data && data.category) {
-            const { url_path, url_suffix } = data.category;
+            const {url_path, url_suffix} = data.category;
             setActionUrl(`/${url_path}.${url_suffix}`);
         }
     }, [data]);
@@ -45,12 +44,9 @@ const ActionItem = props => {
     }, [entityIdentifier]);
 
     return (
-        <Button
-            priority="high"
-            onClick={() => (window.location.href = actionUrl)}
-        >
+        <button priority="high" onClick={() => (window.location.href = actionUrl)}>
             {title}
-        </Button>
+        </button>
     );
 };
 
@@ -59,8 +55,8 @@ ActionItem.propTypes = {
     entityIdentifier: shape({
         entityType: string.isRequired,
         type: string.isRequired,
-        value: string.isRequired
-    })
+        value: string.isRequired,
+    }),
 };
 
 export default ActionItem;

@@ -15,3 +15,4 @@ export {ContentTeaser, ContentTeaserEditConfig} from './components/ContentTeaser
 export {FeaturedCategories, FeaturedCategoriesEditConfig} from './components/FeaturedCategories';
 export {ProductCarousel, ProductCarouselEditConfig} from './components/ProductCarousel';
 export {ProductTeaser, ProductTeaserEditConfig} from './components/ProductTeaser';
+export {AemClient} from './AemClient';

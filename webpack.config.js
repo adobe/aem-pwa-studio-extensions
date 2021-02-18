@@ -37,7 +37,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules\/(?!(@magento)).+/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                 },
@@ -58,8 +58,7 @@ module.exports = {
             },
         ],
     },
-    // externals: [/@magento\/venia-ui(\/.+)/],
-    externals: ['react', 'react-dom', 'react-router-dom'],
+    externals: ['react', 'react-dom', 'react-router-dom', /@magento\/.+/],
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
