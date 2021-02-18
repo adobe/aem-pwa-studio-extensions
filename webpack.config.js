@@ -19,9 +19,11 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: {index: './src/index.js'},
-    output: {filename: '[name].js', path: path.resolve(__dirname, 'dist')},
-    target: 'node',
-    externals: [nodeExternals(), nodeExternals({modulesDir: path.resolve(__dirname, '../../node_modules')})],
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        libraryTarget: 'umd',
+    },
     module: {
         rules: [
             {
@@ -35,12 +37,9 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!(@magento)).+/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-react'],
-                    },
                 },
             },
             {
@@ -59,6 +58,8 @@ module.exports = {
             },
         ],
     },
+    // externals: [/@magento\/venia-ui(\/.+)/],
+    externals: ['react', 'react-dom', 'react-router-dom'],
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({

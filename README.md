@@ -1,15 +1,7 @@
-# AEM PWA Studio Extensions
+# AEM CIF SPA Components
 
-A collection of AEM extensions for [Magento PWA Studio](https://github.com/magento/pwa-studio/)
+A collection of client-side components used by Adobe CIF. These are marketing components used in a Commerce context, i.e. teasers, product carousels etc.
 
-## Building this project
+## Building the project
 
-This project uses [Yarn Workspaces](https://yarnpkg.com/features/workspaces) and you'll need Yarn 2.0 to build it. Refer to the each project README file in the [packages](./packages) directory.
-
-## Contributing
-
-Contributions are welcomed! Read the [Contributing Guide](./.github/CONTRIBUTING.md) for more information.
-
-## Licensing
-
-This project is licensed under the Apache V2 License. See [LICENSE](LICENSE) for more information.
+This project uses [Yarn](https://yarnpkg.com/), so you'll have to have that installed in order to build the project.
