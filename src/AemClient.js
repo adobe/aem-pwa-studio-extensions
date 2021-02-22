@@ -13,12 +13,6 @@
  ******************************************************************************/
 import {ModelClient} from '@adobe/aem-spa-page-model-manager';
 
-const FETCH_CONFIG = {
-    headers: {
-        Authorization: 'Basic YWRtaW46YWRtaW4=',
-    },
-};
-
 export class AemClient extends ModelClient {
     constructor({url, config}) {
         super(url);

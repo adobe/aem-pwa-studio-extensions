@@ -12,48 +12,29 @@
  *
  ******************************************************************************/
 import React from 'react';
-import {
-    Page,
-    MapTo,
-    withMappable,
-    ResponsiveGrid
-} from '@adobe/aem-react-editable-components';
-import Text, { TextEditConfig } from '../aem/Text';
-import ProductTeaser, { ProductTeaserEditConfig } from '../aem/ProductTeaser';
-import ContentTeaser from '../aem/ContentTeaser';
-import FeaturedCategories from '../aem/FeaturedCategories';
-import { ContentTeaserEditConfig } from '../aem/ContentTeaser/contentTeaser';
-import { FeaturedCategoriesEditConfig } from '../aem/FeaturedCategories/featuredCategories';
-import ProductCarousel, {
-    ProductCarouselEditConfig
-} from '../aem/ProductCarousel';
+import {Page, MapTo, withMappable, ResponsiveGrid} from '@adobe/aem-react-editable-components';
+import {ProductTeaser, ProductTeaserEditConfig} from '../ProductTeaser';
+import {ContentTeaser, ContentTeaserEditConfig} from '../ContentTeaser';
+import {FeaturedCategories, FeaturedCategoriesEditConfig} from '../FeaturedCategories';
+import {ProductCarousel, ProductCarouselEditConfig} from '../ProductCarousel';
 
-const AemPage = props => {
+const AemPage = (props) => {
     return <Page {...props} />;
 };
 
 export default withMappable(AemPage);
 
-MapTo('venia/components/commerce/productteaser')(
-    ProductTeaser,
-    ProductTeaserEditConfig
-);
-MapTo('venia/components/text')(Text, TextEditConfig);
+MapTo('venia/components/commerce/productteaser')(ProductTeaser, ProductTeaserEditConfig);
 MapTo('venia/components/container')(ResponsiveGrid, {
     emptyLabel: 'Container',
-    isEmpty: props => {
+    isEmpty: (props) => {
         return props.cqItemsOrder && props.cqItemsOrder.length > 0;
     },
-    resourceType: 'venia/components/container'
+    resourceType: 'venia/components/container',
 });
-MapTo('core/cif/components/content/teaser/v1/teaser')(
-    ContentTeaser,
-    ContentTeaserEditConfig
+MapTo('core/cif/components/content/teaser/v1/teaser')(ContentTeaser, ContentTeaserEditConfig);
+MapTo('core/cif/components/commerce/featuredcategorylist/v1/featuredcategorylist')(
+    FeaturedCategories,
+    FeaturedCategoriesEditConfig
 );
-MapTo(
-    'core/cif/components/commerce/featuredcategorylist/v1/featuredcategorylist'
-)(FeaturedCategories, FeaturedCategoriesEditConfig);
-MapTo('core/cif/components/commerce/productcarousel/v1/productcarousel')(
-    ProductCarousel,
-    ProductCarouselEditConfig
-);
+MapTo('core/cif/components/commerce/productcarousel/v1/productcarousel')(ProductCarousel, ProductCarouselEditConfig);
