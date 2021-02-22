@@ -12,23 +12,13 @@
  *
  ******************************************************************************/
 import React from 'react';
-import Price from '@magento/peregrine';
+import AemPage from '../AemPage';
+import { useLocation } from 'react-router-dom';
+const AemRoute = () => {
+    //TODO error cases
+    const { pathname } = useLocation();
 
-import classes from './productCard.css';
-
-const ProductCard = (props) => {
-    const {title} = props;
-    return (
-        <div aria-role="displaycard" className={`card ${classes.productcard}`}>
-            <a href="#">
-                <div className={classes['productcard-image']}>
-                    <img className="product__image" src="" alt={title} />
-                </div>
-                <div>{title}</div>
-                <Price />
-            </a>
-        </div>
-    );
+    return <AemPage pagePath={pathname.slice(0, pathname.indexOf('.'))} />;
 };
 
-export default ProductCard;
+export default AemRoute;

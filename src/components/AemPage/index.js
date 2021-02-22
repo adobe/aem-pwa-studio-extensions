@@ -11,24 +11,4 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import React from 'react';
-import Price from '@magento/peregrine';
-
-import classes from './productCard.css';
-
-const ProductCard = (props) => {
-    const {title} = props;
-    return (
-        <div aria-role="displaycard" className={`card ${classes.productcard}`}>
-            <a href="#">
-                <div className={classes['productcard-image']}>
-                    <img className="product__image" src="" alt={title} />
-                </div>
-                <div>{title}</div>
-                <Price />
-            </a>
-        </div>
-    );
-};
-
-export default ProductCard;
+export { default as AemPage } from './page';
