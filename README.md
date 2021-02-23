@@ -12,10 +12,9 @@ _Coming soon_
 2. Go to your scaffolded PWA Studio app and manually add this extension as a dependency in your `package.json`, like
 
     ```json
-    dependencies:
-        {
-            "@adobe/aem-pwa-studio-extensions": "file:<path to your cloned repo>"
-        }
+    dependencies: {
+        "@adobe/aem-pwa-studio-extensions": "file:<path to your cloned repo>"
+    }
     ```
 
 3. Run `yarn install` in your PWA Studio app
