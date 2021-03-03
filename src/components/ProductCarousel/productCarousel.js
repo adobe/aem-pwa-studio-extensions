@@ -13,6 +13,7 @@
  ******************************************************************************/
 import {string, arrayOf, shape} from 'prop-types';
 import React from 'react';
+import Products from '@magento/pagebuilder/lib/ContentTypes/Products';
 
 const ProductCarouselEditConfig = {
     isEmpty: (props) => {
@@ -36,8 +37,7 @@ const ProductCarousel = (props) => {
         appearance: 'carousel',
     };
 
-    //  return <Products {...carouselSettings} />;
-    return <div>This will be the product carousel</div>;
+    return <Products {...carouselSettings} />;
 };
 
 ProductCarousel.propTypes = {

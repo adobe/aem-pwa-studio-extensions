@@ -14,7 +14,7 @@
 import React, {useEffect, useState} from 'react';
 import {string, shape} from 'prop-types';
 import {useLazyQuery} from '@apollo/client';
-
+import Button from '@magento/venia-ui/lib/components/Button';
 import getCategoryById from './getCategoryById.graphql';
 const ActionItem = (props) => {
     const {title, entityIdentifier} = props;
@@ -44,9 +44,9 @@ const ActionItem = (props) => {
     }, [entityIdentifier]);
 
     return (
-        <button priority="high" onClick={() => (window.location.href = actionUrl)}>
+        <Button priority="high" onClick={() => (window.location.href = actionUrl)}>
             {title}
-        </button>
+        </Button>
     );
 };
 
