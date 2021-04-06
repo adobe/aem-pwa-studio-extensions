@@ -22,4 +22,13 @@ module.exports = targets => {
             ]
         });
     });
+
+    const targetables = Targetables.using(targets);
+    const productFullDetail = targetables.reactComponent(
+        '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.js'
+    );
+    productFullDetail.addImport(`import {AfterProductData} from '../../../../../../src/components/AfterProductData'`);
+    productFullDetail.addImport(`import {BeforeProductData} from '../../../../../../src/components/BeforeProductData'`);
+    productFullDetail.insertBeforeJSX(`<Form>`, `<BeforeProductData productDetails={productDetails}>`);
+    productFullDetail.insertAfterJSX(`<Form>`, `<AfterProductData productDetails={productDetails}>`);
 };
