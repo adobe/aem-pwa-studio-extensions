@@ -1,10 +1,10 @@
 const { Targetables } = require('@magento/pwa-buildpack');
 module.exports = targets => {
-    console.log(`Targets?!`, targets);
     targets.of('@magento/pwa-buildpack').specialFeatures.tap(flags => {
         flags[targets.name] = {
             esModules: true,
-            cssModules: true
+            cssModules: true,
+            graphqlQueries: true
         };
     });
 
@@ -22,13 +22,4 @@ module.exports = targets => {
             ]
         });
     });
-
-    const targetables = Targetables.using(targets);
-    const productFullDetail = targetables.reactComponent(
-        '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.js'
-    );
-    productFullDetail.addImport(`import {AfterProductData} from '../../../../../../src/components/AfterProductData'`);
-    productFullDetail.addImport(`import {BeforeProductData} from '../../../../../../src/components/BeforeProductData'`);
-    productFullDetail.insertBeforeJSX(`<Form>`, `<BeforeProductData productDetails={productDetails}>`);
-    productFullDetail.insertAfterJSX(`<Form>`, `<AfterProductData productDetails={productDetails}>`);
 };
