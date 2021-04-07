@@ -56,4 +56,11 @@ frontend-maven-plugin
 yarn-error.log
 .env
 .npmrc
-.yarn
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
