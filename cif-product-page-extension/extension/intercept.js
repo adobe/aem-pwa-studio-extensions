@@ -1,4 +1,3 @@
-const { Targetables } = require('@magento/pwa-buildpack');
 module.exports = targets => {
     targets.of('@magento/pwa-buildpack').specialFeatures.tap(flags => {
         flags[targets.name] = {
@@ -7,7 +6,6 @@ module.exports = targets => {
             graphqlQueries: true
         };
     });
-
     // Add variable for AEM CFM GraphQL endpoint
     targets.of('@magento/pwa-buildpack').envVarDefinitions.tap(defs => {
         defs.sections.push({
