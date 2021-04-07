@@ -1,0 +1,89 @@
+/*******************************************************************************
+ *
+ *    Copyright 2021 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
+
+.root {
+    color: rgb(var(--venia-global-color-text));
+    padding: 2.5rem 3rem;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.root h1 {
+    font-size: var(--venia-global-fontSize-600);
+    line-height: 1.25em;
+    padding-bottom: 1rem;
+}
+
+.post {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.post .heroImage {
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.post .heroImage img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post .body {
+    display: flex;
+    flex-direction: column;
+}
+
+.post .title {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.post .content {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: justify;
+}
+
+.post .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    color: rgb(var(--venia-global-color-gray-700));
+    font-size: var(--venia-typography-body-S-fontSize);
+    line-height: var(--venia-global-lineHeight-300);
+}
+
+.post .footer .author {
+    text-align: right;
+}
+
+@media (max-width: 960px) {
+    .post .heroImage {
+        padding-bottom: 1rem;
+    }
+
+    .post .heroImage img {
+        width: 100%;
+    }
+
+    .post {
+        flex-direction: column;
+    }
+}

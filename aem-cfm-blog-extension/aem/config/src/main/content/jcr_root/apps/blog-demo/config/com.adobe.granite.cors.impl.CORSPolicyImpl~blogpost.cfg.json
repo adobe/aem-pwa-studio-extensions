@@ -1,0 +1,29 @@
+{
+  "supportscredentials": true,
+  "exposedheaders": [
+    ""
+  ],
+  "supportedmethods": [
+    "GET",
+    "HEAD",
+    "POST"
+  ],
+  "alloworigin": [
+    "https://pwa-studio-test-vflyn.local.pwadev:9366"
+  ],
+  "maxage:Integer": 1800,
+  "alloworiginregexp": [],
+  "allowedpaths": [
+    ".*"
+  ],
+  "supportedheaders": [
+    "Origin",
+    "Accept",
+    "X-Requested-With",
+    "Content-Type",
+    "Access-Control-Request-Method",
+    "Access-Control-Request-Headers",
+    "authorization",
+    "store"
+  ]
+}

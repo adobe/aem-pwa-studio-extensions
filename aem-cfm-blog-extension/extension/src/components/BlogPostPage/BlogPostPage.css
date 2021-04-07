@@ -1,0 +1,163 @@
+/*******************************************************************************
+ *
+ *    Copyright 2021 Adobe. All rights reserved.
+ *    This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License. You may obtain a copy
+ *    of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software distributed under
+ *    the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ *    OF ANY KIND, either express or implied. See the License for the specific language
+ *    governing permissions and limitations under the License.
+ *
+ ******************************************************************************/
+
+.root {
+    color: rgb(var(--venia-global-color-text));
+    padding: 2.5rem 3rem;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.heroImage {
+    padding-bottom: 1rem;
+}
+
+.heroImage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.title {
+    padding-bottom: 1.5rem;
+}
+
+.title h1 {
+    font-size: var(--venia-global-typography-heading-XL-fontSize);
+    line-height: 1.25em;
+}
+.title .date {
+    color: rgb(var(--venia-global-color-gray-700));
+    font-size: var(--venia-typography-body-S-fontSize);
+    line-height: var(--venia-global-lineHeight-300);
+}
+
+.content {
+    line-height: var(--venia-typography-body-lineHeight);
+    font-size: var(--venia-typography-body-M-fontSize);
+    text-align: justify;
+}
+
+.content p {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+
+.content ul {
+    list-style-type: disc;
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    padding-inline-start: 40px;
+}
+
+.content h2 {
+    font-size: var(--venia-typography-body-M-fontSize);
+    border-left: 3px solid rgb(var(--venia-brand-color-1-500));
+    padding: 12px 24px;
+}
+
+.content h3 {
+    font-size: var(--venia-global-typography-heading-L-fontSize);
+    padding-top: 1rem;
+    font-weight: var(--venia-global-fontWeight-semibold);
+    line-height: 1.25em;
+}
+
+.content a {
+    color: rgb(var(--venia-brand-color-1-700));
+}
+
+.tags {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tags li {
+    display: inline;
+    color: rgb(var(--venia-global-color-gray-700));
+    font-size: var(--venia-typography-body-S-fontSize);
+    font-weight: var(--venia-global-fontWeight-bold);
+    padding: calc(0.3rem + 1px) 1rem calc(0.3rem - 1px);
+    text-transform: uppercase;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.author {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.author .body {
+    display: flex;
+    flex-direction: column;
+}
+
+.authorPhoto {
+    padding-right: 1rem;
+    text-align: center;
+}
+
+.authorPhoto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(var(--venia-global-color-border));
+    object-fit: cover;
+}
+
+.authorName {
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.authorContact {
+    padding-bottom: 1rem;
+}
+
+.authorBio {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: justify;
+    padding-bottom: 2rem;
+}
+
+.authorContact li {
+    display: inline;
+    border-color: rgb(var(--venia-global-color-gray-700));
+    border-radius: 10rem;
+    border-style: solid;
+    border-width: 2px;
+    color: rgb(var(--venia-global-color-gray-700));
+    font-size: var(--venia-typography-body-S-fontSize);
+    font-weight: var(--venia-global-fontWeight-bold);
+    padding: calc(0.3rem + 1px) 1rem calc(0.3rem - 1px);
+    text-transform: uppercase;
+    margin-right: 0.75rem;
+}
+
+.authorContact li:hover {
+    border-color: rgb(var(--venia-global-color-gray-900));
+    color: rgb(var(--venia-global-color-gray-900));
+}
+
+.authorH2 {
+    padding-top: 2rem;
+    font-size: var(--venia-global-typography-heading-L-fontSize);
+    font-weight: var(--venia-global-fontWeight-semibold);
+    line-height: 1.25em;
+    padding-bottom: 1rem;
+}
