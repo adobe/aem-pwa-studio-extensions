@@ -34,7 +34,7 @@ jobs:
             node -v
             npm -v
             yarn -v
-            yarn install --frozen-lockfile
+            yarn install --immutable
           working_directory: ./aem-cfm-blog-extension/extension
       - run:
           name: Linting
