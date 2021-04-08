@@ -1,5 +1,5 @@
 {
-  "name": "@adobe/cif-product-page-extension",
+  "name": "@adobe/aem-cif-product-page-extension",
   "version": "0.0.1",
   "author": "Adobe, Inc.",
   "module": "index.js",

@@ -4,9 +4,9 @@
 __metadata:
   version: 4
 
-"@adobe/cif-product-page-extension@workspace:.":
+"@adobe/aem-cif-product-page-extension@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@adobe/cif-product-page-extension@workspace:."
+  resolution: "@adobe/aem-cif-product-page-extension@workspace:."
   peerDependencies:
     "@apollo/client": ~3.1.2
     "@magento/pwa-buildpack": ^9.0.0
