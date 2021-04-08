@@ -1,5 +1,9 @@
 module.exports = {
-    applyCustomization: productFullDetail => {
+    applyCustomization: targetables => {
+        const productFullDetail = targetables.reactComponent(
+            '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.js'
+        );
+
         productFullDetail.addImport(`import {AfterProductData} from '@adobe/aem-cif-product-page-extension'`);
         productFullDetail.addImport(`import {BeforeProductData} from '@adobe/aem-cif-product-page-extension'`);
         productFullDetail.addImport(`import {ProductTitle} from '@adobe/aem-cif-product-page-extension'`);
