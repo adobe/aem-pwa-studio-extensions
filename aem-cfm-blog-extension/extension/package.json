@@ -1,0 +1,35 @@
+{
+  "name": "@adobe/pwa-studio-aem-cfm-blog-extension",
+  "version": "0.0.1",
+  "description": "PWA Studio Extension to display blog posts via AEM Content Fragments GraphQL API",
+  "author": "Adobe, Inc.",
+  "license": "Apache-2.0",
+  "main": "./src/index.js",
+  "pwa-studio": {
+    "targets": {
+      "intercept": "src/intercept.js"
+    }
+  },
+  "scripts": {
+    "prettier:check": "prettier --check 'src/**/*.{js,css}' --config ./.prettierrc",
+    "prettier:fix": "prettier --write 'src/**/*.{js,css}' --config ./.prettierrc",
+    "eslint:check": "eslint 'src/**/*.js' -c ./.eslintrc.js",
+    "eslint:fix": "eslint --fix 'src/**/*.js' -c ./.eslintrc.js"
+  },
+  "peerDependencies": {
+    "@apollo/client": "~3.1.2",
+    "@magento/pwa-buildpack": "^8.0.1",
+    "@magento/venia-ui": "^6.0.1",
+    "graphql": "~15.3.0",
+    "graphql-tag": "^2.11.0",
+    "react": "~16.9.0",
+    "react-router-dom": "~5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-react": "^7.23.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
+  }
+}
