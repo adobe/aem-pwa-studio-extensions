@@ -1,11 +1,11 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
 import getProductFragmentBySku from '../../queries/getProductFragment.gql';
-import classes from './beforeProductData.css';
+import { useQuery } from '@apollo/client';
+import classes from '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.css';
 
-const BeforeProductData = ({ productDetails }) => {
-    const { sku } = productDetails;
-    console.log(`Got sku ${sku}`);
+const ProductTitle = props => {
+    const { sku } = props;
+
     const { loading, error, data } = useQuery(getProductFragmentBySku, {
         variables: { sku },
         context: { target: 'aem' }
@@ -18,10 +18,10 @@ const BeforeProductData = ({ productDetails }) => {
 
     if (data && data.productList && data.productList.items && data.productList.items.length > 0) {
         const productData = data.productList.items[0];
-        content = productData ? <p>{productData.text.plaintext}</p> : '';
+        content = productData ? <p>{productData.title}</p> : '';
     }
 
-    return <section className={classes.section}>{content}</section>;
+    return <h1 className={classes.productName}>{content}</h1>;
 };
 
-export default BeforeProductData;
+export default ProductTitle;
