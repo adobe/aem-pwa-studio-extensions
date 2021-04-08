@@ -3,8 +3,8 @@ import getProductFragmentBySku from '../../queries/getProductFragment.gql';
 import { useQuery } from '@apollo/client';
 import classes from '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.css';
 
-const ProductTitle = props => {
-    const { sku } = props;
+const ProductTitle = ({ productDetails }) => {
+    const { sku, name } = productDetails;
 
     const { loading, error, data } = useQuery(getProductFragmentBySku, {
         variables: { sku },
@@ -19,6 +19,8 @@ const ProductTitle = props => {
     if (data && data.productList && data.productList.items && data.productList.items.length > 0) {
         const productData = data.productList.items[0];
         content = productData ? <p>{productData.title}</p> : '';
+    } else {
+        content = name;
     }
 
     return <h1 className={classes.productName}>{content}</h1>;
