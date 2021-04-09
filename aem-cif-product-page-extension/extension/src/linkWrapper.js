@@ -11,16 +11,13 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import { ApolloLink, createHttpLink } from "@apollo/client";
+import { ApolloLink, createHttpLink } from '@apollo/client';
 
 export default function linkWrapper(link) {
-    const aemGraphql = new URL(
-        "/content/graphql/global/endpoint.json",
-        "http://localhost:4503"
-    ).toString();
+    const aemGraphql = new URL('/content/graphql/global/endpoint.json', 'http://localhost:4503').toString();
     return ApolloLink.split(
-        (operation) => {
-            return operation.getContext().target === "aem";
+        operation => {
+            return operation.getContext().target === 'aem';
         },
         createHttpLink({ uri: aemGraphql }),
         link

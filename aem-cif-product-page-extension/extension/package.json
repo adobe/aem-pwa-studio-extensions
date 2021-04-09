@@ -8,6 +8,12 @@
       "intercept": "./intercept.js"
     }
   },
+  "scripts": {
+    "prettier:check": "prettier --check 'src/**/*.{js,css}' --config ./.prettierrc",
+    "prettier:fix": "prettier --write 'src/**/*.{js,css}' --config ./.prettierrc",
+    "eslint:check": "eslint 'src/**/*.js' -c ./.eslintrc.js",
+    "eslint:fix": "eslint --fix 'src/**/*.js' -c ./.eslintrc.js"
+  },
   "peerDependencies": {
     "@apollo/client": "~3.1.2",
     "@magento/pwa-buildpack": "^9.0.0",
@@ -16,5 +22,12 @@
     "graphql-tag": "^2.11.0",
     "react": "~16.9.0",
     "react-router-dom": "~5.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
   }
 }

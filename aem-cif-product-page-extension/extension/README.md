@@ -28,6 +28,16 @@ function localIntercept(targets) {
 }
 ```
 
+## Configuring the PWA Studio app
+
+To configure your app to connect to the AEM instance you have to add the URL of the instance in the `.env` file of the app:
+
+```
+AEM_CFM_GRAPHQL=<your publish instance url>
+```
+
+The default value for this setting is `http://localhost:4503`
+
 ## Local development
 
 For local development (or play around with the SNAPSHOT versions) you have must follow these steps:
