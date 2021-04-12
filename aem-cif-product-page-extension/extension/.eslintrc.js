@@ -20,9 +20,22 @@ const headerBlock = [
 
 // eslint-disable-next-line no-undef
 module.exports = {
-    extends: ['@magento'],
-    parser: 'babel-eslint',
-    plugins: ['header'],
+    extends: [
+        'eslint:recommended',
+        'plugin:react/recommended'
+    ],
+    env: {
+        browser: true,
+        es6: true
+    },
+    plugins: ['react', 'react-hooks', 'header'],
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        },
+        ecmaVersion: 2018,
+        sourceType: 'module'
+    },
     rules: {
         'no-useless-escape': 'off',
         'no-console': ['warn', {allow: ['error', 'warn']}],
@@ -34,7 +47,6 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         // override the default which is more restrictive
         'react/prop-types': ['warn', {ignore: ['children']}],
-        strict: ['error', 'global'],
-        'jest/valid-describe': 'off',
+        strict: ['error', 'global']
     },
 };

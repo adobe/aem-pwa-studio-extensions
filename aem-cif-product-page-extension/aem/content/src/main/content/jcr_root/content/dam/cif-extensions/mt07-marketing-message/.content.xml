@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="0631d72a-3445-43b3-9c3e-9eb393b39b4f">
+    <jcr:content
+        cq:name="mt07-marketing-message"
+        cq:parentPath="/content/dam/cif-extensions"
+        jcr:lastModified="{Date}2021-04-08T13:36:20.280+03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="MT07 Marketing message"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-04-08T13:36:20.280+03:00">
+        <data
+            cq:model="/conf/cif-extensions/settings/dam/cfm/models/pdp-model"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                addProductImages="{Boolean}false"
+                addProductImages_x0040_LastModified="{Date}2021-04-08T13:36:20.019+03:00"
+                sku="MT07"
+                sku_x0040_LastModified="{Date}2021-04-08T13:36:20.018+03:00"
+                text="&lt;p>This is the toppest top you'll ever see. Lorem ipsum.&lt;/p>&#xa;"
+                text_x0040_ContentType="text/html"
+                text_x0040_LastModified="{Date}2021-04-08T13:36:20.019+03:00"
+                title="The top that tops them all"
+                title_x0040_LastModified="{Date}2021-04-08T13:36:20.018+03:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

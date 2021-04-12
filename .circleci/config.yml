@@ -44,6 +44,48 @@ jobs:
           name: Formatting
           command: yarn prettier:check
           working_directory: ./aem-cfm-blog-extension/extension
+  aem-cif-product-page-extension-build-extension:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run:
+          name: Provision
+          command: |
+            node -v
+            npm -v
+            yarn -v
+            yarn install --immutable
+          working_directory: ./aem-cif-product-page-extension/extension
+      - run:
+          name: Linting
+          command: yarn eslint:check
+          working_directory: ./aem-cif-product-page-extension/extension
+      - run:
+          name: Formatting
+          command: yarn prettier:check
+          working_directory: ./aem-cif-product-page-extension/extension
+  aem-cif-product-page-extension-build-aem:
+    docker:
+      - image: circleci/openjdk:11-jdk-node
+    working_directory: ~/build
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - maven-repo-v1-{{ checksum "aem-cif-product-page-extension/aem/pom.xml" }}
+            - maven-repo-v1-
+      - run:
+          name: Build
+          command: |
+            java -version
+            mvn -v
+            mvn -B clean install
+          working_directory: ./aem-cif-product-page-extension/aem
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-repo-v1-{{ checksum "aem-cif-product-page-extension/aem/pom.xml" }}
 
 workflows:
   version: 2
@@ -54,6 +96,14 @@ workflows:
             tags:
               only: /.*/
       - cfm-blog-extension-build-extension:
+          filters:
+            tags:
+              only: /.*/
+      - aem-cif-product-page-extension-build-aem:
+          filters:
+            tags:
+              only: /.*/
+      - aem-cif-product-page-extension-build-extension:
           filters:
             tags:
               only: /.*/
