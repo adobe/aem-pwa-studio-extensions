@@ -17,9 +17,32 @@ import {ProductTeaser, ProductTeaserEditConfig} from '../ProductTeaser';
 import {ContentTeaser, ContentTeaserEditConfig} from '../ContentTeaser';
 import {FeaturedCategories, FeaturedCategoriesEditConfig} from '../FeaturedCategories';
 import {ProductCarousel, ProductCarouselEditConfig} from '../ProductCarousel';
+import {ModelManager} from '@adobe/aem-spa-page-model-manager';
+import {AemClient} from '../../AemClient';
+import {useLocation} from 'react-router-dom';
 
 const AemPage = (props) => {
-    return <Page {...props} />;
+    console.log(`Rendering an <AemPage> with `, props);
+    const {url} = useLocation();
+
+    let newProps = props;
+    if (url === '/') {
+        props = {cqPath: '/content/venia/us/en/home', ...props};
+    }
+
+    const modelClient = new AemClient({
+        url: AEM_URL,
+        config: {
+            headers: {
+                Authorization: `Basic ${AEM_AUTH_TOKEN}`,
+            },
+        },
+    });
+
+    ModelManager.initialize({modelClient, path: props.cqPath});
+    ModelManager.getData(props.cqPath);
+
+    return <Page {...newProps} />;
 };
 
 export default withMappable(AemPage);
