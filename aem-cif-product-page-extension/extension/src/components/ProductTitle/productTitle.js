@@ -12,13 +12,13 @@
  *
  ******************************************************************************/
 import React from 'react';
+import { shape, string } from 'prop-types';
 import getProductFragmentBySku from '../../queries/getProductFragment.gql';
 import { useQuery } from '@apollo/client';
 import classes from '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.css';
 
 const ProductTitle = ({ productDetails }) => {
     const { sku, name } = productDetails;
-
     const { loading, error, data } = useQuery(getProductFragmentBySku, {
         variables: { sku },
         context: { target: 'aem' }
