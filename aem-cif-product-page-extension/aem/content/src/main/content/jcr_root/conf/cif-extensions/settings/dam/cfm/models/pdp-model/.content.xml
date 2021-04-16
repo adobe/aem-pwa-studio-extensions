@@ -10,7 +10,7 @@
         cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
         jcr:description="A content fragment model used for enriching the Product Page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="PDP Model"
+        jcr:title="Product"
         sling:resourceSuperType="dam/cfm/models/console/components/data/entity"
         sling:resourceType="dam/cfm/models/console/components/data/entity/default"
         status="enabled">

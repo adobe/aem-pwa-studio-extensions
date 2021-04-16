@@ -65,6 +65,10 @@ jobs:
           name: Formatting
           command: yarn prettier:check
           working_directory: ./aem-cif-product-page-extension/extension
+      - run: 
+          name: Testing
+          command: yarn test
+          working_directory: ./aem-cif-product-page-extension/extension
   aem-cif-product-page-extension-build-aem:
     docker:
       - image: circleci/openjdk:11-jdk-node
