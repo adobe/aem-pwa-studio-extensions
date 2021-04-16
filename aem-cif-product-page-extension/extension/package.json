@@ -12,7 +12,9 @@
     "prettier:check": "prettier --check 'src/**/*.{js,css}' --config ./.prettierrc",
     "prettier:fix": "prettier --write 'src/**/*.{js,css}' --config ./.prettierrc",
     "eslint:check": "eslint 'src/**/*.js' -c ./.eslintrc.js",
-    "eslint:fix": "eslint --fix 'src/**/*.js' -c ./.eslintrc.js"
+    "eslint:fix": "eslint --fix 'src/**/*.js' -c ./.eslintrc.js",
+    "test": "jest",
+    "test:watch":"jest --watch"
   },
   "peerDependencies": {
     "@apollo/client": "~3.1.2",
@@ -24,10 +26,23 @@
     "react-router-dom": "~5.1.0"
   },
   "devDependencies": {
+    "@apollo/client": "^3.3.15",
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "@magento/venia-ui": "^7.0.0",
+    "@testing-library/react": "^11.2.6",
+    "babel-jest": "^26.6.3",
     "eslint": "^7.23.0",
     "eslint-plugin-header": "^3.1.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "graphql": "^15.5.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "regenerator-runtime": "^0.13.7"
   }
 }

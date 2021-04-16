@@ -13,9 +13,10 @@
  ******************************************************************************/
 import React from 'react';
 import { shape, string } from 'prop-types';
-import getProductFragmentBySku from '../../queries/getProductFragment.gql';
 import { useQuery } from '@apollo/client';
 import classes from '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.css';
+
+import getProductFragmentBySku from '../../queries/getProductFragment.gql';
 
 const ProductTitle = ({ productDetails }) => {
     const { sku, name } = productDetails;
@@ -23,7 +24,6 @@ const ProductTitle = ({ productDetails }) => {
         variables: { sku },
         context: { target: 'aem' }
     });
-
     let content = '';
     if (loading) {
         content = <p>Loading AEM data...</p>;
