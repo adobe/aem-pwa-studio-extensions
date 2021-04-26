@@ -22,4 +22,4 @@ This AEM project contains the Content Fragment model required by the PWA Studio 
 
         Example: `pwa-studio-test-vflyn.local.pwadev`.
 
-4. Build and install the the packages using `mvn clean install -PautoInstallSinglePackage` for the author instance and `mvn clean install -PautoInstallSinglePackagePublish` for the publish instance
+4. Build and install the the packages using `mvn clean install -PautoInstallPackage` for the author instance and `mvn clean install -PautoInstallPackagePublish` for the publish instance

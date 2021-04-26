@@ -28,6 +28,26 @@ function localIntercept(targets) {
 }
 ```
 
+## Configure a secondary Apollo Link to point to AEM
+
+To make your PWA Studio app query the AEM GraphQL you have to do the following steps:
+
+1. Go to the root of your PWA Studio app and edit `src/index.js`.
+2. Import the `linkWrapper` util
+
+```javascript
+import { linkWrapper } from '@adobe/aem-cif-product-page-extension';
+```
+
+3. Update the props of the `<Adapter>` component:
+
+```javascript
+ <Adapter
+        apiBase={apiBase}
+        apollo={{ link: linkWrapper(apolloLink) }}
+        store={store}>
+```
+
 ## Configuring the PWA Studio app
 
 To configure your app to connect to the AEM instance you have to add the URL of the instance in the `.env` file of the app:
