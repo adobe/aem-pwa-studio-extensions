@@ -1,7 +1,7 @@
 [![CircleCI](https://circleci.com/gh/adobe/aem-pwa-studio-extensions.svg?style=svg)](https://circleci.com/gh/aadobe/aem-pwa-studio-extensions)
 # PWA Studio Extension for AEM headless
 
-With this extension for Magento PWA Studio, you can integrate headless content from Adobe Experience Manager via its GraphQL API. This GitHub code demonstrates this with an embedded blog example where the content is mmanaged in AEM.
+With this extension for Magento PWA Studio, you can integrate headless content from Adobe Experience Manager via its GraphQL API. This GitHub code demonstrates this with an embedded blog example where the content is managed in AEM.
 
 # Setup
 
@@ -27,7 +27,7 @@ With this extension for Magento PWA Studio, you can integrate headless content f
 5. Install the `content` and `config` packages on both author and publish instance using the package manager.
 
 ## PWA Studio
-1. Create a new PWA studio project. You can find more information about the process in the Magento [documentation](https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/).
+1. Create a new PWA studio project. You can find more information about the process in the Magento [documentation](https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/). This extension supports PWA Studio version 10.
 
     ```bash
     yarn create @magento/pwa
@@ -59,7 +59,7 @@ With this extension for Magento PWA Studio, you can integrate headless content f
     <Adapter apiBase={apiBase} apollo={{ link: linkWrapper(apolloLink) }} store={store}>
     ```
 
-5. Add the Blog entry to the navigation by adding the following adaptions to `pwa-root/local-intercept.js`:
+5. Add the Blog entry to the navigation components by adding the following adaptions to `pwa-root/local-intercept.js`:
 
     ```javascript
     const addBlogToNavigation = require('@adobe/pwa-studio-aem-cfm-blog-extension/src/addBlogToNavigation');

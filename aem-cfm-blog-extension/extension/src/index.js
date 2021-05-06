@@ -12,6 +12,7 @@
  *
  ******************************************************************************/
 export { default as NavigationBlogButton } from './components/NavigationBlogButton';
+export { default as MegaMenuBlogItem } from './components/MegaMenuBlogItem';
 export { default as BlogPostPage } from './components/BlogPostPage';
 export { default as BlogIndexPage } from './components/BlogIndexPage';
 export { default as linkWrapper } from './linkWrapper';

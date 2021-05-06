@@ -34,7 +34,7 @@ module.exports = targets => {
         });
     });
 
-    // Add routes for blog index and article pages
+    // Add routes for blog index and blog post pages
     targets.of('@magento/venia-ui').routes.tap(routes => {
         routes.push({
             name: 'BlogIndexPageRoute',

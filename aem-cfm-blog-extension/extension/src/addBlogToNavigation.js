@@ -14,9 +14,14 @@
 const { Targetables } = require('@magento/pwa-buildpack');
 
 module.exports = targets => {
-    // Add navigation item to Navigation component
+    // Add Blog item to Navigation component
     const targetables = Targetables.using(targets);
     const NavigationComponent = targetables.reactComponent('@magento/venia-ui/lib/components/Navigation/navigation.js');
     NavigationComponent.addImport(`import { NavigationBlogButton } from '@adobe/pwa-studio-aem-cfm-blog-extension'`);
     NavigationComponent.appendJSX('div className={bodyClassName}', '<NavigationBlogButton onClick={handleClose} />');
+
+    // Add Blog item to MegaMenu component
+    const MegaMenuComponent = targetables.reactComponent('@magento/venia-ui/lib/components/MegaMenu/megaMenu.js');
+    MegaMenuComponent.addImport(`import { MegaMenuBlogItem } from '@adobe/pwa-studio-aem-cfm-blog-extension'`);
+    MegaMenuComponent.appendJSX('nav role="navigation"', '<MegaMenuBlogItem />');
 };

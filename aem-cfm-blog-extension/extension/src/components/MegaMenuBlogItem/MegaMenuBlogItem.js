@@ -11,18 +11,23 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import { ApolloLink, createHttpLink } from '@apollo/client';
+import React from 'react';
 
-export default function linkWrapper(link) {
-    // Expect the AEM GraphQL endpoint to be at {pwa-studio}/endpoint.json, proxied via UPWARD
-    const aemGraphql = new URL('/endpoint.json', location.origin).toString();
-    return ApolloLink.split(
-        operation => {
-            // If the context contains a target and that target is AEM, route the request to the newly created Apollo
-            // link instance, otherwise use the wrapped one, which is usually going to Magento.
-            return operation.getContext().target === 'aem';
-        },
-        createHttpLink({ uri: aemGraphql }),
-        link
+import { Link, useLocation } from '@magento/venia-ui/lib/drivers';
+
+import classes from './MegaMenuBlogItem.css';
+
+const MegaMenuBlogItem = () => {
+    const location = useLocation();
+    const isActive = location.pathname.startsWith('/blog');
+
+    return (
+        <div className={classes.megaMenuItem}>
+            <Link className={isActive ? classes.megaMenuLinkActive : classes.megaMenuLink} to="/blog">
+                Blog
+            </Link>
+        </div>
     );
-}
+};
+
+export default MegaMenuBlogItem;
