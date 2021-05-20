@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="145eddbb-8b8b-400c-a661-10166bc12caf">
+    <jcr:content
+        cq:name="beervana-portland"
+        cq:parentPath="/content/dam/blog-demo/en/blogposts/beervana-portland"
+        jcr:lastModified="{Date}2021-05-18T14:34:50.928+02:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Beervana Portland"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-05-18T14:34:50.928+02:00">
+        <data
+            cq:model="/conf/blog-demo/settings/dam/cfm/models/blogpost"
+            jcr:primaryType="nt:unstructured">
+            <master
+                cq:tags="[blog-tags:adventure,blog-tags:drinks]"
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                categories="[blog-tags:drinks,blog-tags:adventure]"
+                categories_x0040_LastModified="{Date}2021-05-18T14:34:50.914+02:00"
+                content="&lt;h3>Experience the best craft breweries in the Pacific Northwest.&lt;/h3>&#xa;&lt;p>Portland is often referred to as Beervana, and it’s easy to understand why once you get a sip of their delicious ales. &amp;nbsp;This adventure will provide insider access to spectacular local breweries that define the taste and experience of Oregon beer culture and tradition.&amp;nbsp; &amp;nbsp;Our Brewery Tour takes you on a beer tasting adventure in hip and trendy Pearl District through Historic Old Town District in Portland, Oregon. Experience Portland’s vibrant history while you sample the best brews the city has to offer.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2021-05-18T14:34:50.913+02:00"
+                heroImage="/content/dam/blog-demo/en/blogposts/beervana-portland/AdobeStock_200192344.jpeg"
+                heroImage_x0040_LastModified="{Date}2021-05-18T14:34:50.912+02:00"
+                publishedAt="{Date}2021-04-16T14:33:00.000+02:00"
+                publishedAt_x0040_LastModified="{Date}2021-05-18T14:34:50.912+02:00"
+                publishedBy="/content/dam/blog-demo/en/authors/ian-provo"
+                publishedBy_x0040_LastModified="{Date}2021-05-18T14:34:50.912+02:00"
+                title="Beervana Portland"
+                title_x0040_LastModified="{Date}2021-05-18T14:34:50.911+02:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

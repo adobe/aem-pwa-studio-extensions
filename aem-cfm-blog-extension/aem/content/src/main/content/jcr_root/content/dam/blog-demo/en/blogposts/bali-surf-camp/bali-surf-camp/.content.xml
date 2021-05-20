@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="cf329e8f-ab8e-4cc3-8643-ea58a0c72b40">
+    <jcr:content
+        cq:name="bali-surf-camp"
+        cq:parentPath="/content/dam/blog-demo/en/blogposts/bali-surf-camp"
+        jcr:lastModified="{Date}2021-05-18T14:32:42.618+02:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Bali Surf Camp"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-05-18T14:32:42.618+02:00">
+        <data
+            cq:model="/conf/blog-demo/settings/dam/cfm/models/blogpost"
+            jcr:primaryType="nt:unstructured">
+            <master
+                cq:tags="[blog-tags:surfing,blog-tags:adventure]"
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                categories="[blog-tags:adventure,blog-tags:surfing]"
+                categories_x0040_LastModified="{Date}2021-05-18T14:32:42.584+02:00"
+                content="&lt;p>Keramas&lt;/p>&#xa;&lt;p>The most famous break in Bali is home to a WSL stop and features a fast barrelling right-hand reef break. One of Bali's most consistent waves, you'll have fun on waves from 2ft to 20 ft.&lt;/p>&#xa;&lt;p>Nusa Dua&lt;/p>&#xa;&lt;p>Home to the best right handers in Bali, Nusa Dua is famous for big wave surfing and is suitable for the advanced surfers in the group. The Nusa Dua reef has numerous waves that break on different tides and slightly different conditions.&lt;/p>&#xa;&lt;p>Sanur&lt;/p>&#xa;&lt;p>Located on the East coast, Sanur only breaks when there is a big swell and is at it's best when it's well overhead. Waves break over a very sharp reef so be prepared to leave some skin behind.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2021-05-18T14:32:42.583+02:00"
+                heroImage="/content/dam/blog-demo/en/blogposts/bali-surf-camp/AdobeStock_175749320.jpg"
+                heroImage_x0040_LastModified="{Date}2021-05-18T14:32:42.583+02:00"
+                publishedAt="{Date}2021-05-01T14:31:00.000+02:00"
+                publishedAt_x0040_LastModified="{Date}2021-05-18T14:32:42.583+02:00"
+                publishedBy="/content/dam/blog-demo/en/authors/stacey-roswells"
+                publishedBy_x0040_LastModified="{Date}2021-05-18T14:32:42.582+02:00"
+                title="Bali Surf Camp"
+                title_x0040_LastModified="{Date}2021-05-18T14:32:42.582+02:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

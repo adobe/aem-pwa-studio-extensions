@@ -5,9 +5,8 @@
     jcr:title="Blog Tags"
     sling:resourceType="cq/tagging/components/tag">
     <news/>
-    <creative-cloud/>
-    <digital-transformation/>
-    <adobe-summit/>
-    <experience-cloud/>
-    <experience-manager/>
+    <cycling/>
+    <drinks/>
+    <adventure/>
+    <surfing/>
 </jcr:root>

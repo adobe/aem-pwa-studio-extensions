@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="a0b99f36-ddf5-4b30-8346-0203fc769be8">
+    <jcr:content
+        jcr:lastModified="{Date}2021-05-18T14:13:26.045+02:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Ian Provo"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-05-18T14:13:26.045+02:00">
+        <data
+            cq:model="/conf/blog-demo/settings/dam/cfm/models/author"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                bio="Ian is a blogger for Venia."
+                bio_x0040_ContentType="text/plain"
+                bio_x0040_LastModified="{Date}2021-05-18T14:13:26.032+02:00"
+                email="ian.provo@venia.magento.com"
+                email_x0040_LastModified="{Date}2021-05-18T14:13:26.032+02:00"
+                facebook_x0040_LastModified="{Date}2021-05-18T14:12:50.724+02:00"
+                name="Ian Provo"
+                name_x0040_LastModified="{Date}2021-05-18T14:13:26.031+02:00"
+                photo="/content/dam/blog-demo/en/authors/ian_provo.jpg"
+                photo_x0040_LastModified="{Date}2021-05-18T14:13:26.032+02:00"
+                twitter_x0040_LastModified="{Date}2021-05-18T14:12:50.724+02:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

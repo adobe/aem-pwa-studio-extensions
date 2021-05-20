@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d7340cf9-3c9b-44fc-a785-6a8b1a1d6cdc">
+    <jcr:content
+        cq:name="stacey-roswells"
+        cq:parentPath="/content/dam/blog-demo/en/authors"
+        jcr:lastModified="{Date}2021-05-18T14:10:35.402+02:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Stacey Roswells"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-05-18T14:10:35.402+02:00">
+        <data
+            cq:model="/conf/blog-demo/settings/dam/cfm/models/author"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                bio="Hello,&#xa;&#xa;I am Stacey and an author."
+                bio_x0040_ContentType="text/plain"
+                bio_x0040_LastModified="{Date}2021-05-18T14:10:35.389+02:00"
+                email="stacey.rosewell@venia.magento.com"
+                email_x0040_LastModified="{Date}2021-05-18T14:10:35.388+02:00"
+                facebook_x0040_LastModified="{Date}2021-05-18T14:08:48.595+02:00"
+                name="Stacey Roswells"
+                name_x0040_LastModified="{Date}2021-05-18T14:10:35.388+02:00"
+                photo="/content/dam/blog-demo/en/authors/stacey-roswells.jpg"
+                photo_x0040_LastModified="{Date}2021-05-18T14:10:35.389+02:00"
+                twitter_x0040_LastModified="{Date}2021-05-18T14:08:48.595+02:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
