@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="62ad6dcf-59b0-4905-be8f-e53436ea107c">
+    <jcr:content
+        cq:name="cycling-tuscany"
+        cq:parentPath="/content/dam/blog-demo/en/blogposts/cycling-tuscany"
+        cq:versionCreator="admin"
+        jcr:lastModified="{Date}2021-05-18T14:30:23.845+02:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Cycling Tuscany"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-05-18T14:30:23.845+02:00">
+        <data
+            cq:model="/conf/blog-demo/settings/dam/cfm/models/blogpost"
+            jcr:primaryType="nt:unstructured">
+            <master
+                cq:tags="[blog-tags:adventure,blog-tags:cycling]"
+                jcr:mixinTypes="[cq:Taggable]"
+                jcr:primaryType="nt:unstructured"
+                categories="[blog-tags:cycling,blog-tags:adventure]"
+                categories_x0040_LastModified="{Date}2021-05-18T14:30:23.763+02:00"
+                content="&lt;h2>Day 1:&amp;nbsp;Radda to Siena&lt;/h2>&#xa;&lt;p>On the first day, we’ll cycle from Radda to the medieval city of Siena, a beautiful Tuscan city distinguished by its medieval brick buildings.&amp;nbsp;En-route, we’ll stop for lunch and a wine tasting at the Felsina Vineyard. The central piazza, known as Il Campo, is famous for the Palio run, a horse race run around the piazza two times every summer.&amp;nbsp;&lt;/p>&#xa;&lt;h2>Day 2:&amp;nbsp;Siena &amp;amp; Monteriggioni Loop&lt;/h2>&#xa;&lt;p>Take a quick ride out of Siena to the medieval town of Monteriggioni in the morning. In the afternoon, we'll join a local family-owned vineyard for lunch. You’ll learn how to make pasta and pizza from scratch and enjoy their family's best wine. To really make your stay memorable, live, traditional Tuscan folk music will join after lunch for a small celebration.&lt;/p>&#xa;&lt;h2>Day 3:&amp;nbsp;Chianti&lt;/h2>&#xa;&lt;p>On day 3, we explore the Chianti region of Italy on the Amendola road.&amp;nbsp; If you love beautiful architechture, it's a real treat to cycle around it's cobblestone streets. This is a rural region of Tuscany in the provinces of Florence, Siena and Arezzo, composed mainly of hills and mountains, so there may be some more climbing through this region. Let's put some work in today!&lt;/p>&#xa;&lt;h2>Day 4:&amp;nbsp;Arrivederci!&lt;/h2>&#xa;&lt;p>After breakfast at 9 am we offer a 45-min group shuttle to the nearest train station. From there, you can connect to Florence or Rome in less than 2 hours.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2021-05-18T14:30:23.762+02:00"
+                heroImage="/content/dam/blog-demo/en/blogposts/cycling-tuscany/AdobeStock_59459597.jpeg"
+                heroImage_x0040_LastModified="{Date}2021-05-18T14:30:23.762+02:00"
+                publishedAt="{Date}2021-05-18T14:26:00.000+02:00"
+                publishedAt_x0040_LastModified="{Date}2021-05-18T14:30:23.762+02:00"
+                publishedBy="/content/dam/blog-demo/en/authors/ian-provo"
+                publishedBy_x0040_LastModified="{Date}2021-05-18T14:30:23.756+02:00"
+                title="Cycling Tuscany"
+                title_x0040_LastModified="{Date}2021-05-18T14:30:23.756+02:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
