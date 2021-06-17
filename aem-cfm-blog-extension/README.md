@@ -63,9 +63,14 @@ With this extension for Magento PWA Studio, you can integrate headless content f
 
     ```javascript
     const addBlogToNavigation = require('@adobe/pwa-studio-aem-cfm-blog-extension/src/addBlogToNavigation');
+    const { applyCustomization } = require('@adobe/aem-cif-product-page-extension/customizer');
+    const { Targetables } = require('@magento/pwa-buildpack');
 
     function localIntercept(targets) {
         addBlogToNavigation(targets);
+
+        const targetables = Targetables.using(targets);
+        applyCustomization(targetables);
     }
     ```
 

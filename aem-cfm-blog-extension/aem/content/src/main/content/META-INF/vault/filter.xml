@@ -3,4 +3,5 @@
     <filter root="/content/cq:tags/blog-tags"/>
     <filter root="/conf/blog-demo"/>
     <filter root="/content/dam/blog-demo"/>
+    <filter root="/content/dam/cif-extensions"/>
 </workspaceFilter>

@@ -16,3 +16,8 @@ export { default as MegaMenuBlogItem } from './components/MegaMenuBlogItem';
 export { default as BlogPostPage } from './components/BlogPostPage';
 export { default as BlogIndexPage } from './components/BlogIndexPage';
 export { default as linkWrapper } from './linkWrapper';
+
+export { BeforeProductData } from './components/BeforeProductData';
+export { AfterProductData } from './components/AfterProductData';
+export { ProductTitle } from './components/ProductTitle';
+export { applyCustomization } from './customizer';
