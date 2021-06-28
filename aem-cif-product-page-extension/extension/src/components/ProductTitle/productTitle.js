@@ -38,7 +38,11 @@ const ProductTitle = ({ productDetails }) => {
     }
     if (data && data.productList && data.productList.items && data.productList.items.length > 0) {
         const productData = data.productList.items[0];
-        content = productData ? <p>{productData.title}</p> : '';
+        content = productData ? (
+            <p>{productData.title && productData.title.length > 0 ? productData.title : name}</p>
+        ) : (
+            ''
+        );
     } else {
         content = name;
     }

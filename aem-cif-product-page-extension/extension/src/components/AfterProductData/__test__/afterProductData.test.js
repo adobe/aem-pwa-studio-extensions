@@ -11,27 +11,26 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
+import { AfterProductData } from '../index';
+import { render, screen, waitFor } from '@testing-library/react';
+import { MockedProvider } from '@apollo/client/testing';
 import React from 'react';
-import { shape, string } from 'prop-types';
-import useAemProductData from '../../talons/useAemProductData';
-import classes from './afterProductData.css';
-const AfterProductData = ({ productDetails }) => {
-    const { sku } = productDetails;
-    const [{ loading, error, productData }] = useAemProductData({ sku });
+import 'regenerator-runtime/runtime';
 
-    let content = '';
+import { productFragmentMock } from '../../../testUtils';
 
-    if (loading) {
-        content = <p>Loading AEM data...</p>;
-    }
+describe('AfterProductData', () => {
+    it('renders the component with data', async () => {
+        const sampleComponent = (
+            <MockedProvider addTypename={false} mocks={[productFragmentMock]}>
+                <AfterProductData productDetails={{ sku: 'VT01', name: 'backup' }} />
+            </MockedProvider>
+        );
 
-    content = productData ? productData.text.plaintext : '';
+        render(sampleComponent);
 
-    return <section className={classes.section}>{content}</section>;
-};
-
-AfterProductData.propTypes = {
-    productDetails: shape({ sku: string.isRequired })
-};
-
-export default AfterProductData;
+        await waitFor(() => {
+            screen.getByText('This is the mock data');
+        });
+    });
+});

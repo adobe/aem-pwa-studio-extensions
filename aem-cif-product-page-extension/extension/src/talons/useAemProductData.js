@@ -11,27 +11,26 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import React from 'react';
-import { shape, string } from 'prop-types';
-import useAemProductData from '../../talons/useAemProductData';
-import classes from './afterProductData.css';
-const AfterProductData = ({ productDetails }) => {
-    const { sku } = productDetails;
-    const [{ loading, error, productData }] = useAemProductData({ sku });
+import getProductFragmentBySku from '../queries/getProductFragment.gql';
 
-    let content = '';
+import { useQuery } from '@apollo/client';
+export default ({ sku }) => {
+    const { loading, error, data } = useQuery(getProductFragmentBySku, {
+        variables: { sku },
+        context: { target: 'aem' }
+    });
 
-    if (loading) {
-        content = <p>Loading AEM data...</p>;
+    let productData = undefined;
+
+    if (data && data.productList && data.productList.items && data.productList.items.length > 0) {
+        productData = data.productList.items[0];
     }
 
-    content = productData ? productData.text.plaintext : '';
-
-    return <section className={classes.section}>{content}</section>;
+    return [
+        {
+            productData,
+            error,
+            loading
+        }
+    ];
 };
-
-AfterProductData.propTypes = {
-    productDetails: shape({ sku: string.isRequired })
-};
-
-export default AfterProductData;

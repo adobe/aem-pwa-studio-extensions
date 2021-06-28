@@ -13,35 +13,20 @@
  ******************************************************************************/
 import React from 'react';
 import { shape, string } from 'prop-types';
-import { useQuery } from '@apollo/client';
-import getProductFragmentBySku from '../../queries/getProductFragment.gql';
+import useAemProductData from '../../talons/useAemProductData';
 import classes from './beforeProductData.css';
 
 const BeforeProductData = ({ productDetails }) => {
     const { sku } = productDetails;
-    const { loading, error, data } = useQuery(getProductFragmentBySku, {
-        variables: { sku },
-        context: { target: 'aem' }
-    });
+    const [{ loading, error, productData }] = useAemProductData({ sku });
 
     let content = '';
+
     if (loading) {
         content = <p>Loading AEM data...</p>;
     }
 
-    if (error) {
-        content = (
-            <p>
-                <em>Error retrieving data from AEM</em>
-            </p>
-        );
-        console.error(error);
-    }
-
-    if (data && data.productList && data.productList.items && data.productList.items.length > 0) {
-        const productData = data.productList.items[0];
-        content = productData ? <p>{productData.text.plaintext}</p> : '';
-    }
+    content = productData ? productData.text.plaintext : '';
 
     return <section className={classes.section}>{content}</section>;
 };

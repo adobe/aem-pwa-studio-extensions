@@ -11,7 +11,7 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import { gql } from '@apollo/client';
+import gql from 'graphql-tag';
 
 export default gql`
     query GetProductFragmentBySku($sku: String!) {
@@ -24,6 +24,12 @@ export default gql`
                     markdown
                     plaintext
                     json
+                }
+                productImage {
+                    ... on ImageRef {
+                        type
+                        _path
+                    }
                 }
             }
         }
