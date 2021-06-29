@@ -12,27 +12,26 @@
  *
  ******************************************************************************/
 import React from 'react';
-import { shape, string } from 'prop-types';
-import useAemProductData from '../../talons/useAemProductData';
-import classes from './beforeProductData.css';
+import { arrayOf, shape, string } from 'prop-types';
+import classes from './productImages.css';
 
-const BeforeProductData = ({ productDetails }) => {
-    const { sku } = productDetails;
-    const [{ loading, error, productData }] = useAemProductData({ sku });
-
-    let content = '';
-
-    if (loading) {
-        content = <p>Loading AEM data...</p>;
+const ProductImages = ({ productImages }) => {
+    if (!productImages || productImages.length === 0) {
+        return null;
     }
 
-    content = productData ? productData.text.html : '';
-
-    return <section className={classes.section} dangerouslySetInnerHTML={{ __html: content }}></section>;
+    return (
+        <div className={classes.container}>
+            {productImages.map(({ _publishUrl }) => {
+                const name = _publishUrl.substring(_publishUrl.lastIndexOf('/'), _publishUrl.length);
+                return <img key={name} src={_publishUrl} alt={name} role="img" className={classes.productImage} />;
+            })}
+        </div>
+    );
 };
 
-BeforeProductData.propTypes = {
-    productDetails: shape({ sku: string.isRequired })
+ProductImages.propTypes = {
+    productImages: arrayOf(shape({ _publishUrl: string.isRequired }))
 };
 
-export default BeforeProductData;
+export default ProductImages;

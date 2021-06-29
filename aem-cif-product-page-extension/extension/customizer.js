@@ -16,16 +16,22 @@ module.exports = {
         const productFullDetail = targetables.reactComponent(
             '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.js'
         );
-        productFullDetail.addImport(`import {BeforeProductData} from '@adobe/aem-cif-product-page-extension'`);
-        productFullDetail.insertBeforeJSX(
-            `section className={classes.title}`,
-            `<BeforeProductData productDetails={productDetails}>`
-        );
+
+        // Uncomment the lines below if you want some data before the product data from Magento
+
+        // productFullDetail.addImport(`import {BeforeProductData} from '@adobe/aem-cif-product-page-extension'`);
+        // productFullDetail.insertBeforeJSX(
+        //     `section className={classes.title}`,
+        //     `<BeforeProductData productDetails={productDetails}>`
+        // );
 
         productFullDetail.addImport(`import {ProductTitle} from '@adobe/aem-cif-product-page-extension'`);
         productFullDetail.replaceJSX(
             `<h1 className={classes.productName}>{productDetails.name}</h1>`,
             `<ProductTitle productDetails={productDetails}/>`
         );
+
+        productFullDetail.addImport(`import {AfterProductData} from '@adobe/aem-cif-product-page-extension'`);
+        productFullDetail.appendJSX(`Fragment`, `<AfterProductData productDetails={productDetails}/>`);
     }
 };

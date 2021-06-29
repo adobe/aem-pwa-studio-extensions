@@ -14,7 +14,7 @@
     "eslint:check": "eslint 'src/**/*.js' -c ./.eslintrc.js",
     "eslint:fix": "eslint --fix 'src/**/*.js' -c ./.eslintrc.js",
     "test": "jest",
-    "test:watch":"jest --watch"
+    "test:watch": "jest --watch"
   },
   "peerDependencies": {
     "@apollo/client": "~3.1.2",
@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "graphql": "^15.5.0",
+    "graphql-tag": "^2.12.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",

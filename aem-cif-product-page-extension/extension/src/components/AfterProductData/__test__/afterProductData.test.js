@@ -31,6 +31,7 @@ describe('AfterProductData', () => {
 
         await waitFor(() => {
             screen.getByText('This is the mock data');
+            screen.getAllByRole('img');
         });
     });
 });

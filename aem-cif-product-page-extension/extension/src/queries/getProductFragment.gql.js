@@ -21,14 +21,10 @@ export default gql`
                 title
                 text {
                     html
-                    markdown
-                    plaintext
-                    json
                 }
-                productImage {
+                productImages {
                     ... on ImageRef {
-                        type
-                        _path
+                        _publishUrl
                     }
                 }
             }

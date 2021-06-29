@@ -27,25 +27,22 @@ const productFragmentMock = {
                         title: 'Mock title',
                         sku: 'VT01',
                         text: {
-                            html: 'This is the mock data',
-                            markdown: 'This is the mock data',
-                            plaintext: 'This is the mock data',
-                            json: [
-                                {
-                                    nodeType: 'paragraph',
-                                    content: [
-                                        {
-                                            nodeType: 'text',
-                                            value: ''
-                                        }
-                                    ]
-                                }
-                            ]
+                            html: 'This is the mock data'
                         },
-                        productImage: {
-                            type: 'image',
-                            _path: '/the/path/of/the/image.jpg'
-                        }
+                        productImages: [
+                            {
+                                _publishUrl: 'http://localhost:4503/content/dam/venia/landing_page_image1.jpg',
+                                __typename: 'ImageRef'
+                            },
+                            {
+                                _publishUrl: 'http://localhost:4503/content/dam/venia/landing_page_image3.jpg',
+                                __typename: 'ImageRef'
+                            },
+                            {
+                                _publishUrl: 'http://localhost:4503/content/dam/venia/shop_the_latest_image2.jpg',
+                                __typename: 'ImageRef'
+                            }
+                        ]
                     }
                 ]
             }

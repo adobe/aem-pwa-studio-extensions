@@ -14,7 +14,9 @@
 import React from 'react';
 import { shape, string } from 'prop-types';
 import useAemProductData from '../../talons/useAemProductData';
+import ProductImages from './productImages';
 import classes from './afterProductData.css';
+
 const AfterProductData = ({ productDetails }) => {
     const { sku } = productDetails;
     const [{ loading, error, productData }] = useAemProductData({ sku });
@@ -25,9 +27,14 @@ const AfterProductData = ({ productDetails }) => {
         content = <p>Loading AEM data...</p>;
     }
 
-    content = productData ? productData.text.plaintext : '';
-
-    return <section className={classes.section}>{content}</section>;
+    content = productData ? productData.text.html : '';
+    let productImages = productData ? productData.productImages : [];
+    return (
+        <section className={classes.section}>
+            <p dangerouslySetInnerHTML={{ __html: content }}></p>
+            <ProductImages productImages={productImages} />
+        </section>
+    );
 };
 
 AfterProductData.propTypes = {
