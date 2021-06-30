@@ -2,6 +2,7 @@
   "name": "@adobe/aem-cif-product-page-extension",
   "version": "0.0.1",
   "author": "Adobe, Inc.",
+  "license": "Apache-2.0",
   "module": "index.js",
   "pwa-studio": {
     "targets": {
