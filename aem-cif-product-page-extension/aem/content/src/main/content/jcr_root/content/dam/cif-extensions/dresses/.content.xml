@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="129da4bb-ce3b-493e-957a-956cd13f962d">
+    <jcr:content
+        cq:lastReplicated="{Date}2021-06-30T17:12:33.699+03:00"
+        cq:lastReplicated_publish="{Date}2021-06-30T17:12:33.699+03:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicatedBy_publish="admin"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
+        cq:name="dresses"
+        cq:parentPath="/content/dam/cif-extensions"
+        jcr:lastModified="{Date}2021-06-30T17:12:14.694+03:00"
+        jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Dresses"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2021-06-30T17:12:14.694+03:00">
+        <data
+            cq:model="/conf/cif-extensions/settings/dam/cfm/models/category"
+            jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                categoryId="37"
+                categoryId_x0040_LastModified="{Date}2021-06-30T17:12:14.429+03:00"
+                categoryName="Dress-up!"
+                categoryName_x0040_LastModified="{Date}2021-06-30T17:12:14.432+03:00"
+                heroBanner="/content/dam/venia/shop_the_latest_image1.jpg"
+                heroBanner_x0040_LastModified="{Date}2021-06-30T17:12:14.438+03:00"
+                text="&lt;p>I've treated the waistcoat as if it were a corset, so that it becomes the first layer in the process of putting clothes on the body. There is constant motion between layering and revealing. Age is something only in your head or a stereotype. Age means nothing when you are passionate about something. If you wear clothes that don't suit you, you're a fashion victim. You have to wear clothes that make you look better. Fashion moves so quickly that, unless you have a strong point of view, you can lose integrity. Women are women, and hurray for that.&lt;br>&#xa;&lt;/p>&#xa;&lt;p>Here be dresses. They are used for... dressing.&amp;nbsp;&lt;/p>&#xa;&lt;p>I get ideas about what's essential when packing my suitcase. Money is the most corrosive aspect of life today because it means that all attention to detail is forgotten. I think it's an old fashioned notion that fashion needs to be exclusive to be fashionable. My aim is to make the poor look rich and the rich look poor. Fashion to me has become very disposable; I wanted to get back to craft, to clothes that could last.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                text_x0040_ContentType="text/html"
+                text_x0040_LastModified="{Date}2021-06-30T17:12:14.435+03:00"/>
+        </data>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
