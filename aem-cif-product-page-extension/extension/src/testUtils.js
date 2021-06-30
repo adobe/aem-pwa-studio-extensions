@@ -11,6 +11,7 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
+import getCategoryFragment from './queries/getCategoryFragment.gql';
 import getProductFragmentBySku from './queries/getProductFragment.gql';
 
 const productFragmentMock = {
@@ -64,4 +65,31 @@ const productFragmentEmpty = {
         }
     }
 };
-export { productFragmentMock, productFragmentEmpty };
+
+const categoryFragment = {
+    request: {
+        query: getCategoryFragment,
+        variables: { id: '37' },
+        context: { target: 'aem' }
+    },
+    result: {
+        data: {
+            categoryList: {
+                items: [
+                    {
+                        categoryId: '37',
+                        categoryName: 'Mock category name',
+                        text: {
+                            html: 'Mock text'
+                        },
+                        heroBanner: {
+                            _publishUrl: 'http://localhost:4503/content/dam/venia/shop_the_latest_image1.jpg',
+                            __typename: 'ImageRef'
+                        }
+                    }
+                ]
+            }
+        }
+    }
+};
+export { productFragmentMock, productFragmentEmpty, categoryFragment };

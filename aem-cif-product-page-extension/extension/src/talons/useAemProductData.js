@@ -12,7 +12,6 @@
  *
  ******************************************************************************/
 import getProductFragmentBySku from '../queries/getProductFragment.gql';
-
 import { useQuery } from '@apollo/client';
 export default ({ sku }) => {
     const { loading, error, data } = useQuery(getProductFragmentBySku, {

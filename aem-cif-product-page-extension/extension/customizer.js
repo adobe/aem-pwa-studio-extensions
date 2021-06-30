@@ -12,7 +12,7 @@
  *
  ******************************************************************************/
 module.exports = {
-    applyCustomization: targetables => {
+    applyProductPageCustomization: targetables => {
         const productFullDetail = targetables.reactComponent(
             '@magento/venia-ui/lib/components/ProductFullDetail/productFullDetail.js'
         );
@@ -33,5 +33,17 @@ module.exports = {
 
         productFullDetail.addImport(`import {AfterProductData} from '@adobe/aem-cif-product-page-extension'`);
         productFullDetail.appendJSX(`Fragment`, `<AfterProductData productDetails={productDetails}/>`);
+    },
+
+    applyCategoryPageCustomization: targetables => {
+        const categoryContent = targetables.reactComponent(
+            '@magento/venia-ui/lib/RootComponents/Category/categoryContent.js'
+        );
+
+        categoryContent.addImport(`import {CategoryTitle} from '@adobe/aem-cif-product-page-extension'`);
+        categoryContent.replaceJSX(
+            `<div className={classes.categoryTitle}>{categoryName}</div>`,
+            `<CategoryTitle categoryDetails={{categoryId, categoryName}}/>`
+        );
     }
 };
