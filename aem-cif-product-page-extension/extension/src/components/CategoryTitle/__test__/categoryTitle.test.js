@@ -16,12 +16,13 @@ import { MockedProvider } from '@apollo/client/testing';
 import { CategoryTitle } from '../index';
 import { categoryFragment } from '../../../testUtils';
 import { render, screen, waitFor } from '@testing-library/react';
+import 'regenerator-runtime/runtime';
 
 describe('Category title', () => {
     it('renders the component with the correct data', async () => {
         const sampleComponent = (
             <MockedProvider addTypename={false} mocks={[categoryFragment]}>
-                <CategoryTitle categoryDetails={{ categoryId: '37', categoryName: 'backup' }} />
+                <CategoryTitle categoryDetails={{ categoryId: 37, categoryName: 'backup' }} />
             </MockedProvider>
         );
 
@@ -35,7 +36,7 @@ describe('Category title', () => {
     it('renders the component with fallback data', async () => {
         const sampleComponent = (
             <MockedProvider addTypename={false} mocks={[categoryFragment]}>
-                <CategoryTitle categoryDetails={{ categoryId: '38', categoryName: 'Backup category name' }} />
+                <CategoryTitle categoryDetails={{ categoryId: 38, categoryName: 'Backup category name' }} />
             </MockedProvider>
         );
 

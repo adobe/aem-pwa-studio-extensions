@@ -69,7 +69,7 @@ const productFragmentEmpty = {
 const categoryFragment = {
     request: {
         query: getCategoryFragment,
-        variables: { id: '37' },
+        variables: { id: 37 },
         context: { target: 'aem' }
     },
     result: {

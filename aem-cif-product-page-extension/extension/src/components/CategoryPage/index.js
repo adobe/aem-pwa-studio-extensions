@@ -11,28 +11,4 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import React from 'react';
-import { string, shape, number } from 'prop-types';
-import classes from './categoryTitle.css';
-import useAemCategoryData from '../../talons/useAemCategoryData';
-
-const CategoryTitle = ({ categoryDetails }) => {
-    const { categoryId, categoryName } = categoryDetails;
-    const [{ categoryData, error, loading }] = useAemCategoryData({ categoryId });
-
-    let title = '';
-
-    if (loading) {
-        title = '';
-    } else {
-        title = categoryData && categoryData.categoryName.length > 0 ? categoryData.categoryName : categoryName;
-    }
-
-    return <div className={classes.categoryTitle}>{title}</div>;
-};
-
-CategoryTitle.propTypes = {
-    categoryDetails: shape({ categoryId: number.isRequired, categoryName: string.isRequired })
-};
-
-export default CategoryTitle;
+export { default as CategoryPage } from './categoryPage';

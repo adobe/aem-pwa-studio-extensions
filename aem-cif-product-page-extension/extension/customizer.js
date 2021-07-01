@@ -41,9 +41,15 @@ module.exports = {
         );
 
         categoryContent.addImport(`import {CategoryTitle} from '@adobe/aem-cif-product-page-extension'`);
+        categoryContent.addImport(`import {CategoryPage} from '@adobe/aem-cif-product-page-extension'`);
         categoryContent.replaceJSX(
             `<div className={classes.categoryTitle}>{categoryName}</div>`,
             `<CategoryTitle categoryDetails={{categoryId, categoryName}}/>`
+        );
+
+        categoryContent.insertBeforeJSX(
+            `div className={classes.headerButtons}`,
+            `<CategoryPage categoryId={categoryId}/>`
         );
     }
 };

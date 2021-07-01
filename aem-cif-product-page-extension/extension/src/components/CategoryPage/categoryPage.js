@@ -12,27 +12,22 @@
  *
  ******************************************************************************/
 import React from 'react';
-import { string, shape, number } from 'prop-types';
-import classes from './categoryTitle.css';
+import { number } from 'prop-types';
 import useAemCategoryData from '../../talons/useAemCategoryData';
 
-const CategoryTitle = ({ categoryDetails }) => {
-    const { categoryId, categoryName } = categoryDetails;
+const CategoryPage = ({ categoryId }) => {
     const [{ categoryData, error, loading }] = useAemCategoryData({ categoryId });
 
-    let title = '';
-
     if (loading) {
-        title = '';
-    } else {
-        title = categoryData && categoryData.categoryName.length > 0 ? categoryData.categoryName : categoryName;
+        return null;
     }
+    let content = categoryData && categoryData.text ? categoryData.text.html : '';
 
-    return <div className={classes.categoryTitle}>{title}</div>;
+    return <div dangerouslySetInnerHTML={{ __html: content }}></div>;
 };
 
-CategoryTitle.propTypes = {
-    categoryDetails: shape({ categoryId: number.isRequired, categoryName: string.isRequired })
+CategoryPage.propTypes = {
+    categoryId: number.isRequired
 };
 
-export default CategoryTitle;
+export default CategoryPage;
