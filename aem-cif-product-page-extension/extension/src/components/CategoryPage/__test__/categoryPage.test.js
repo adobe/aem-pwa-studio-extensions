@@ -18,6 +18,10 @@ import { render, waitFor, screen } from '@testing-library/react';
 import { categoryFragment } from '../../../testUtils';
 import 'regenerator-runtime/runtime';
 
+jest.mock('@magento/venia-ui/lib/components/Image', () => {
+    // eslint-disable-next-line react/display-name
+    return () => <img alt="no-img" role="img"></img>;
+});
 describe('Category page', () => {
     it('renders the correct data', async () => {
         const sampleComponent = (

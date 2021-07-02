@@ -32,7 +32,6 @@ const CategoryPage = ({ categoryId }) => {
         ) : (
             ''
         );
-    console.log(categoryData);
     return (
         <div className={classes.container}>
             {image}
