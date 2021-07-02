@@ -1,0 +1,14 @@
+.banner {
+    width: 75%;
+}
+
+.banner-container {
+    height: 300px;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
