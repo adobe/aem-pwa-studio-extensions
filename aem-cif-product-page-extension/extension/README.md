@@ -52,7 +52,7 @@ AEM_CFM_GRAPHQL=<your publish instance url>
 
 The default value for this setting is `http://localhost:4503`
 
-## Local development
+## Local development (Yarn 1.x)
 
 For local development (or play around with the SNAPSHOT versions) you have must follow these steps:
 
@@ -62,4 +62,20 @@ For local development (or play around with the SNAPSHOT versions) you have must 
 git clone git@github.com:adobe/aem-pwa-studio-extensions.git
 ```
 
-2. Follow the steps in the [main README](../../README.md) to link the extension to the PWA studio app
+2. Navigate to the extension folder using `cd aem-pwa-studio-extensions/aem-cif-product-page-extension/extension`
+
+3. Run `yarn link`
+
+4. Go to your PWA Studio app folder and run
+
+```bash
+yarn link <extension module name>
+```
+
+5. Go the the package.json file of your PWA Studio app and make sure the extension is listed as a dependency, using the `link:` directive, similar to:
+
+```json
+"devDependencies":{
+   "@adobe/aem-cif-product-page-extension":"link: ../the/path/to/your/extension"
+}
+```
