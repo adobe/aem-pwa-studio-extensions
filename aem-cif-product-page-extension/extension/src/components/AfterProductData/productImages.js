@@ -23,7 +23,7 @@ const ProductImages = ({ productImages }) => {
     return (
         <div className={classes.container}>
             {productImages.map(({ _publishUrl }) => {
-                const name = _publishUrl.substring(_publishUrl.lastIndexOf('/'), _publishUrl.length);
+                const name = _publishUrl.substring(_publishUrl.lastIndexOf('/') + 1, _publishUrl.length);
                 return <img key={name} src={_publishUrl} alt={name} role="img" className={classes.productImage} />;
             })}
         </div>

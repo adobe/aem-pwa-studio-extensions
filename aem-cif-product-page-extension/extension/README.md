@@ -1,6 +1,17 @@
 # AEM Product Data Page extension
 
-This project is a [PWA Studio](https://pwastudio.io) extension which fetches data from AEM and decorates the Venia product page with it.
+This project is a [PWA Studio](https://pwastudio.io) extension which fetches data from AEM and decorates the Venia product and category pages with it.
+
+## Decorating the Product Page
+
+For decorating the product page, we update the `@magento/venia-ui/lib/components/ProductFullDetail` component. The AEM data used to decorate the product page is the following:
+
+-   product title (optional). If the product title is not stored in AEM, the original title is used
+-   a text and up to five images, displayed under the product details from Magento
+
+## Decorating the Category Page
+
+For decorating the category page, we update the `@magento/venia-ui/lib/RootComponents/Category` component. The category page is decorated using the title stored in AEM (if present), a marketing text, and a hero banner.
 
 ## Installing the extension
 
@@ -17,16 +28,19 @@ To apply the extension you must edit the `local-intercept.js` script of your PWA
 ```javascript
 //import the script from this package
 const {
-    applyCustomization
+    applyCategoryPageCustomization, applyProductPageCustomization
 } = require('@adobe/aem-cif-product-page-extension/customizer');
 
 function localIntercept(targets) {
     ...
     const targetables = Targetables.using(targets);
     // call the function to apply customizations
-    applyCustomization(targetables)
+    applyProductPageCustomization(targetables);
+    applyCategoryPageCustomization(targetables);
 }
 ```
+
+Obviously, you can choose to apply only the category page customizations or the product page one if you want.
 
 ## Configuring the PWA Studio app
 
@@ -48,9 +62,4 @@ For local development (or play around with the SNAPSHOT versions) you have must 
 git clone git@github.com:adobe/aem-pwa-studio-extensions.git
 ```
 
-2. Then you have to update your PWA Studio app dependencies using the path to this project.
-
-```bash
-cd <your PWA Studio app folder>
-yarn add -D "file: <path to this repository>/extension"
-```
+2. Follow the steps in the [main README](../../README.md) to link the extension to the PWA studio app

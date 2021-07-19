@@ -18,7 +18,7 @@ import useAemCategoryData from '../../talons/useAemCategoryData';
 
 const CategoryTitle = ({ categoryDetails }) => {
     const { categoryId, categoryName } = categoryDetails;
-    const [{ categoryData, error, loading }] = useAemCategoryData({ categoryId });
+    const [{ categoryData, loading }] = useAemCategoryData({ categoryId });
 
     let title = '';
 

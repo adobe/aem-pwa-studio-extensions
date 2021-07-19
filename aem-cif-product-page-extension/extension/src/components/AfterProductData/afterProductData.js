@@ -19,7 +19,7 @@ import classes from './afterProductData.css';
 
 const AfterProductData = ({ productDetails }) => {
     const { sku } = productDetails;
-    const [{ loading, error, productData }] = useAemProductData({ sku });
+    const [{ loading, productData }] = useAemProductData({ sku });
 
     let content = '';
 

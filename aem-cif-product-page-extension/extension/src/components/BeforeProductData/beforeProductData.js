@@ -18,7 +18,7 @@ import classes from './beforeProductData.css';
 
 const BeforeProductData = ({ productDetails }) => {
     const { sku } = productDetails;
-    const [{ loading, error, productData }] = useAemProductData({ sku });
+    const [{ loading, productData }] = useAemProductData({ sku });
 
     let content = '';
 

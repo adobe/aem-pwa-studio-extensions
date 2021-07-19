@@ -11,14 +11,14 @@
  *    governing permissions and limitations under the License.
  *
  ******************************************************************************/
-import React, { Fragment } from 'react';
+import React from 'react';
 import Image from '@magento/venia-ui/lib/components/Image';
 import { number } from 'prop-types';
 import useAemCategoryData from '../../talons/useAemCategoryData';
 import classes from './categoryPage.css';
 
 const CategoryPage = ({ categoryId }) => {
-    const [{ categoryData, error, loading }] = useAemCategoryData({ categoryId });
+    const [{ categoryData, loading }] = useAemCategoryData({ categoryId });
 
     if (loading) {
         return null;
