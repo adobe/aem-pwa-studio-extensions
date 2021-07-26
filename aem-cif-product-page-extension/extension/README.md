@@ -62,20 +62,8 @@ For local development (or play around with the SNAPSHOT versions) you have must 
 git clone git@github.com:adobe/aem-pwa-studio-extensions.git
 ```
 
-2. Navigate to the extension folder using `cd aem-pwa-studio-extensions/aem-cif-product-page-extension/extension`
-
-3. Run `yarn link`
-
-4. Go to your PWA Studio app folder and run
+2. Go to your PWA Studio app folder and run
 
 ```bash
-yarn link <extension module name>
-```
-
-5. Go the the package.json file of your PWA Studio app and make sure the extension is listed as a dependency, using the `link:` directive, similar to:
-
-```json
-"devDependencies":{
-   "@adobe/aem-cif-product-page-extension":"link: ../the/path/to/your/extension"
-}
+yarn add -D <path to the extension folder>
 ```
