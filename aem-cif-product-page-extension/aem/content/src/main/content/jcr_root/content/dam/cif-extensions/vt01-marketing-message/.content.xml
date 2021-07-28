@@ -5,31 +5,38 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="0631d72a-3445-43b3-9c3e-9eb393b39b4f">
     <jcr:content
-        cq:lastReplicated="{Date}2021-04-15T14:12:59.626+03:00"
+        cq:lastReplicated="{Date}2021-06-30T15:25:16.046+03:00"
+        cq:lastReplicated_publish="{Date}2021-06-30T15:25:16.046+03:00"
         cq:lastReplicatedBy="admin"
+        cq:lastReplicatedBy_publish="admin"
         cq:lastReplicationAction="Activate"
-        cq:name="mt07-marketing-message"
+        cq:lastReplicationAction_publish="Activate"
+        cq:name="vt01-marketing-message"
         cq:parentPath="/content/dam/cif-extensions"
-        jcr:lastModified="{Date}2021-04-15T14:15:07.505+03:00"
+        jcr:lastModified="{Date}2021-06-30T15:22:58.949+03:00"
         jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent"
         jcr:title="VT01 Marketing message"
         contentFragment="{Boolean}true"
-        lastFragmentSave="{Date}2021-04-15T14:15:07.505+03:00">
+        lastFragmentSave="{Date}2021-06-30T15:22:58.949+03:00">
         <data
             cq:model="/conf/cif-extensions/settings/dam/cfm/models/pdp-model"
             jcr:primaryType="nt:unstructured">
             <master
-                jcr:mixinTypes="[cq:Taggable]"
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
                 jcr:primaryType="nt:unstructured"
                 addProductImages="{Boolean}false"
                 addProductImages_x0040_LastModified="{Date}2021-04-08T13:36:20.019+03:00"
+                productImage="/content/dam/venia/landing_page_hero.jpg"
+                productImage_x0040_LastModified="{Date}2021-06-25T18:14:09.209+03:00"
+                productImages="[/content/dam/venia/landing_page_image1.jpg,/content/dam/venia/landing_page_image3.jpg,/content/dam/venia/shop_the_latest_image2.jpg,/content/dam/venia/landing_page_image4.jpg,/content/dam/venia/landing_page_image2.jpg]"
+                productImages_x0040_LastModified="{Date}2021-06-30T15:22:58.599+03:00"
                 sku="VT01"
                 sku_x0040_LastModified="{Date}2021-04-15T14:12:39.498+03:00"
-                text="&lt;p>Embrace your roots with this traditional, non-hand-made blouse&lt;/p>&#xa;"
+                text="&lt;p>Embrace your roots with this traditional, non-hand-made blouse.&amp;nbsp;&lt;/p>&#xa;&lt;p>And some images&lt;/p>&#xa;"
                 text_x0040_ContentType="text/html"
-                text_x0040_LastModified="{Date}2021-04-15T14:12:39.499+03:00"
+                text_x0040_LastModified="{Date}2021-06-29T13:55:46.548+03:00"
                 title="The traditional blouse you've been waiting for"
                 title_x0040_LastModified="{Date}2021-04-15T14:12:39.499+03:00"/>
         </data>

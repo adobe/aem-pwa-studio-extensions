@@ -16,50 +16,12 @@ import 'regenerator-runtime/runtime';
 import { MockedProvider } from '@apollo/client/testing';
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import getProductFragmentBySku from '../../../queries/getProductFragment.gql';
+import { productFragmentMock, productFragmentEmpty } from '../../../testUtils';
 
 describe('Product title', () => {
     it('renders the component with correct data', async () => {
         const sampleComponent = (
-            <MockedProvider
-                addTypename={false}
-                mocks={[
-                    {
-                        request: {
-                            query: getProductFragmentBySku,
-                            variables: { sku: 'VT01' },
-                            context: { target: 'aem' }
-                        },
-                        result: {
-                            data: {
-                                productList: {
-                                    items: [
-                                        {
-                                            title: 'Mock title',
-                                            sku: 'VT01',
-                                            text: {
-                                                html: '',
-                                                markdown: '',
-                                                plaintext: '',
-                                                json: [
-                                                    {
-                                                        nodeType: 'paragraph',
-                                                        content: [
-                                                            {
-                                                                nodeType: 'text',
-                                                                value: ''
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                ]}>
+            <MockedProvider addTypename={false} mocks={[productFragmentMock]}>
                 <ProductTitle productDetails={{ sku: 'VT01', name: 'backup' }} />
             </MockedProvider>
         );
@@ -72,24 +34,7 @@ describe('Product title', () => {
     });
     it('renders the component with fall-back data', async () => {
         const sampleComponent = (
-            <MockedProvider
-                addTypename={false}
-                mocks={[
-                    {
-                        request: {
-                            query: getProductFragmentBySku,
-                            variables: { sku: 'VT01' },
-                            context: { target: 'aem' }
-                        },
-                        result: {
-                            data: {
-                                productList: {
-                                    items: []
-                                }
-                            }
-                        }
-                    }
-                ]}>
+            <MockedProvider addTypename={false} mocks={[productFragmentEmpty]}>
                 <ProductTitle productDetails={{ sku: 'VT01', name: 'Product name' }} />
             </MockedProvider>
         );

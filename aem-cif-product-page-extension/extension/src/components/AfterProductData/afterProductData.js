@@ -12,8 +12,33 @@
  *
  ******************************************************************************/
 import React from 'react';
-const AfterProductData = () => {
-    return <div>This will be displayed after the product data</div>;
+import { shape, string } from 'prop-types';
+import useAemProductData from '../../talons/useAemProductData';
+import ProductImages from './productImages';
+import classes from './afterProductData.css';
+
+const AfterProductData = ({ productDetails }) => {
+    const { sku } = productDetails;
+    const [{ loading, productData }] = useAemProductData({ sku });
+
+    let content = '';
+
+    if (loading) {
+        content = <p>Loading AEM data...</p>;
+    }
+
+    content = productData ? productData.text.html : '';
+    let productImages = productData ? productData.productImages : [];
+    return (
+        <section className={classes.section}>
+            <p dangerouslySetInnerHTML={{ __html: content }}></p>
+            <ProductImages productImages={productImages} />
+        </section>
+    );
+};
+
+AfterProductData.propTypes = {
+    productDetails: shape({ sku: string.isRequired })
 };
 
 export default AfterProductData;

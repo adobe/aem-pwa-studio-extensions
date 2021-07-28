@@ -16,50 +16,11 @@ import 'regenerator-runtime/runtime';
 import { render, screen, waitFor } from '@testing-library/react';
 import { MockedProvider } from '@apollo/client/testing';
 import React from 'react';
-import getProductFragmentBySku from '../../../queries/getProductFragment.gql';
-
+import { productFragmentMock } from '../../../testUtils';
 describe('BeforeProductData', () => {
     it('renders the component with data', async () => {
         const sampleComponent = (
-            <MockedProvider
-                addTypename={false}
-                mocks={[
-                    {
-                        request: {
-                            query: getProductFragmentBySku,
-                            variables: { sku: 'VT01' },
-                            context: { target: 'aem' }
-                        },
-                        result: {
-                            data: {
-                                productList: {
-                                    items: [
-                                        {
-                                            title: 'Mock title',
-                                            sku: 'VT01',
-                                            text: {
-                                                html: 'This is the mock data',
-                                                markdown: 'This is the mock data',
-                                                plaintext: 'This is the mock data',
-                                                json: [
-                                                    {
-                                                        nodeType: 'paragraph',
-                                                        content: [
-                                                            {
-                                                                nodeType: 'text',
-                                                                value: ''
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                ]}>
+            <MockedProvider addTypename={false} mocks={[productFragmentMock]}>
                 <BeforeProductData productDetails={{ sku: 'VT01', name: 'backup' }} />
             </MockedProvider>
         );

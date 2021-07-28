@@ -4,8 +4,14 @@
     allowedPaths="[/content/entities(/.*)?]"
     ranking="{Long}100">
     <jcr:content
-        cq:lastModified="{Date}2021-04-08T12:36:55.625+03:00"
+        cq:lastModified="{Date}2021-07-19T15:38:59.970+03:00"
         cq:lastModifiedBy="admin"
+        cq:lastReplicated="{Date}2021-06-29T14:01:19.048+03:00"
+        cq:lastReplicated_publish="{Date}2021-06-29T14:01:19.048+03:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicatedBy_publish="admin"
+        cq:lastReplicationAction="Activate"
+        cq:lastReplicationAction_publish="Activate"
         cq:scaffolding="/conf/cif-extensions/settings/dam/cfm/models/pdp-model/jcr:content/model"
         cq:templateType="/libs/settings/dam/cfm/model-types/fragment"
         jcr:description="A content fragment model used for enriching the Product Page"
@@ -25,32 +31,29 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="cq/gui/components/authoring/dialog">
                 <content
-                    jcr:lastModified="{Date}2021-04-08T12:36:55.625+03:00"
+                    jcr:lastModified="{Date}2021-07-19T15:38:59.970+03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
                     <items
                         jcr:primaryType="nt:unstructured"
-                        maxGeneratedOrder="24">
-                        <_x0031_617874333419
+                        maxGeneratedOrder="21">
+                        <_x0031_626698321753
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            sling:resourceType="cif/cfm/admin/components/productreference"
                             fieldLabel="SKU"
                             listOrder="21"
-                            maxlength="255"
-                            metaType="text-single"
+                            metaType="product-reference"
                             name="sku"
                             renderReadOnly="false"
                             required="on"
                             showEmptyInReadOnly="true"
-                            valueType="string">
-                            <granite:data jcr:primaryType="nt:unstructured"/>
-                        </_x0031_617874333419>
+                            valueType="string"/>
                         <_x0031_617874577191
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                             fieldLabel="Title"
-                            listOrder="23"
+                            listOrder="1"
                             maxlength="255"
                             metaType="text-single"
                             name="title"
@@ -65,27 +68,56 @@
                             cfm-element="Text"
                             checked="false"
                             default-mime-type="text/html"
-                            listOrder="22"
+                            listOrder="2"
                             metaType="text-multi_ft_toggle"
                             name="text"
                             renderReadOnly="false"
                             showEmptyInReadOnly="true"
                             valueType="string/multiline"/>
-                        <_x0031_617874594824
+                        <_x0031_624963962240
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                            listOrder="24"
-                            metaType="boolean"
-                            name="addProductImages"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                            fieldLabel="Product images"
+                            filter="hierarchy"
+                            listOrder="8"
+                            metaType="reference"
+                            name="productImages"
+                            nameSuffix="contentReference"
                             renderReadOnly="false"
                             showEmptyInReadOnly="true"
-                            text="Add product image"
-                            valueType="boolean">
-                            <granite:data jcr:primaryType="nt:unstructured"/>
-                        </_x0031_617874594824>
+                            showThumbnail="true"
+                            validation="cfm.validation.contenttype.image"
+                            valueType="string/reference[]">
+                            <granite:data
+                                jcr:primaryType="nt:unstructured"
+                                mvmaxitems="5"
+                                showThumbnail="true"
+                                thumbnail-validation="cfm.validation.thumbnail.show"/>
+                            <field
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                                name="productImages"
+                                renderReadOnly="false"
+                                showThumbnail="true"
+                                validation="cfm.validation.contenttype.image">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    mvmaxitems="5"
+                                    showThumbnail="true"
+                                    thumbnail-validation="cfm.validation.thumbnail.show"/>
+                            </field>
+                        </_x0031_624963962240>
                     </items>
                 </content>
             </cq:dialog>
         </model>
+        <change-register jcr:primaryType="nt:unstructured">
+            <_x0031_626698340000
+                jcr:primaryType="nt:unstructured"
+                changePath="/conf/cif-extensions/settings/dam/cfm/models/pdp-model/jcr:content/model/cq:dialog/content/items/1617874333419"
+                elementPath="/conf/cif-extensions/settings/dam/cfm/models/pdp-model/jcr:content/model/cq:dialog/content/items/1617874333419"
+                modelChangeType="MODEL_FIELD_REMOVED"
+                modelPath="/conf/cif-extensions/settings/dam/cfm/models/pdp-model"/>
+        </change-register>
     </jcr:content>
 </jcr:root>

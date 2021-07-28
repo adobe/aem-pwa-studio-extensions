@@ -3,4 +3,5 @@
     jcr:primaryType="cq:Page">
     <jcr:content jcr:primaryType="nt:unstructured"/>
     <pdp-model/>
+    <category/>
 </jcr:root>
