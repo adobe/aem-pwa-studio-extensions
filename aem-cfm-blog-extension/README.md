@@ -27,11 +27,20 @@ With this extension for Magento PWA Studio, you can integrate headless content f
 5. Install the `content` and `config` packages on both author and publish instance using the package manager.
 
 ## PWA Studio
-1. Create a new PWA studio project. You can find more information about the process in the Magento [documentation](https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/). This extension supports PWA Studio version 10.
+1. Create a new PWA studio project. You can find more information about the process in the Magento [documentation](https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/). This extension supports PWA Studio version 10 only.
 
     ```bash
     yarn create @magento/pwa
     ```
+
+    When the scaffolding tool asks for the template, please use the following value:
+
+    ```bash
+    Which template would you like to use to bootstrap pwa-aem? Defaults to "@magento/venia-concept". 
+    @magento/venia-concept@10.0.0
+    ```
+
+    If the build of your project generated with PWA Studio version 10 fails, you might need to apply https://github.com/magento/pwa-studio/issues/3339.
 
 2. Setup hostname and SSL certificate. In the PWA root folder, run:
 
