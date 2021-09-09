@@ -13,7 +13,7 @@
  ******************************************************************************/
 import React from 'react';
 
-import { Link, useLocation } from '@magento/venia-ui/lib/drivers';
+import { Link, useLocation } from 'react-router-dom';
 
 import classes from './MegaMenuBlogItem.css';
 

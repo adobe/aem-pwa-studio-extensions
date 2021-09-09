@@ -16,7 +16,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { fullPageLoadingIndicator } from '@magento/venia-ui/lib/components/LoadingIndicator';
 import ErrorView from '@magento/venia-ui/lib/components/ErrorView';
-import { Link } from '@magento/venia-ui/lib/drivers';
+import { Link } from 'react-router-dom';
 
 import { GET_BLOG_POSTS_QUERY } from './GetBlogPosts.gql.js';
 
