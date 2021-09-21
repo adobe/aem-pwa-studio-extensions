@@ -13,7 +13,7 @@ With this extension for Magento PWA Studio, you can integrate headless content f
 3. In `/aem/config`, update the following configurations to include the hostname of the PWA Studio app. This hostname is generated during step 2 of the PWA Studio setup.
     * `src/main/content/jcr_root/apps/blog-demo/config/com.adobe.granite.cors.impl.CORSPolicyImpl~blogpost.cfg.json`
 
-        Update the `allowedorigin` property to the full hostname of your local PWA installation.
+        Update the `alloworigin` property to the full hostname of your local PWA installation.
 
         Example: `https://pwa-studio-test-vflyn.local.pwadev:9366`
     
