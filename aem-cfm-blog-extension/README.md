@@ -27,20 +27,11 @@ With this extension for Magento PWA Studio, you can integrate headless content f
 5. Install the `content` and `config` packages on both author and publish instance using the package manager.
 
 ## PWA Studio
-1. Create a new PWA studio project. You can find more information about the process in the Magento [documentation](https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/). This extension supports PWA Studio version 10 only.
+1. Create a new PWA studio project. You can find more information about the process in the Magento [documentation](https://magento.github.io/pwa-studio/tutorials/pwa-studio-fundamentals/project-setup/). This extension supports PWA Studio version 11.
 
     ```bash
     yarn create @magento/pwa
     ```
-
-    When the scaffolding tool asks for the template, please use the following value:
-
-    ```bash
-    Which template would you like to use to bootstrap pwa-aem? Defaults to "@magento/venia-concept". 
-    @magento/venia-concept@10.0.0
-    ```
-
-    If the build of your project generated with PWA Studio version 10 fails, you might need to apply https://github.com/magento/pwa-studio/issues/3339.
 
 2. Setup hostname and SSL certificate. In the PWA root folder, run:
 
@@ -58,27 +49,19 @@ With this extension for Magento PWA Studio, you can integrate headless content f
     yarn add --dev @adobe/pwa-studio-aem-cfm-blog-extension
     ```
 
-4. Add the Apollo Link wrapper to your application. In `pwa-root/src/index.js`, make the following changes:
+4. Some customizations cannot be applied by the extension directly, but need to be added to the intercept file of your project. Please add the following code to `pwa-root/local-intercept.js`:
 
     ```javascript
-    import { linkWrapper } from '@adobe/pwa-studio-aem-cfm-blog-extension';
-
-    // ...
-
-    <Adapter apiBase={apiBase} apollo={{ link: linkWrapper(apolloLink) }} store={store}>
-    ```
-
-5. Add the Blog entry to the navigation components by adding the following adaptions to `pwa-root/local-intercept.js`:
-
-    ```javascript
-    const addBlogToNavigation = require('@adobe/pwa-studio-aem-cfm-blog-extension/src/addBlogToNavigation');
+    const applyTargetables = require('@adobe/pwa-studio-aem-cfm-blog-extension/src/applyTargetables');
 
     function localIntercept(targets) {
-        addBlogToNavigation(targets);
+        applyTargetables(targets);
     }
     ```
 
-6. Add the following line to `pwa-root/.env` and adapt it to point to your AEM Content Fragments GraphQL endpoint:
+    This will apply a Apollo Link wrapper to your application, so Apollo can target AEM. It will also add a Blog entry to the navigation components.
+
+4. Add the following line to `pwa-root/.env` and adapt it to point to your AEM Content Fragments GraphQL endpoint:
 
     ```
     AEM_CFM_GRAPHQL=http://localhost:4503/content/graphql/global

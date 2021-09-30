@@ -14,7 +14,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from '@magento/venia-ui/lib/drivers';
+import { Link } from 'react-router-dom';
 
 import classes from './NavigationBlogButton.css';
 

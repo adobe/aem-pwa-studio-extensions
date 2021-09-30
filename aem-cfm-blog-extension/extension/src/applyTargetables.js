@@ -14,8 +14,20 @@
 const { Targetables } = require('@magento/pwa-buildpack');
 
 module.exports = targets => {
-    // Add Blog item to Navigation component
     const targetables = Targetables.using(targets);
+
+    // Add Apollo link wrapper
+    const useAdapter = targetables.esModule('@magento/peregrine/lib/talons/Adapter/useAdapter.js');
+    useAdapter.addImport(`import { linkWrapper } from '@adobe/pwa-studio-aem-cfm-blog-extension';`);
+
+    const replaceTerm = 'link: apolloLink,';
+    useAdapter.spliceSource({
+        before: replaceTerm,
+        remove: replaceTerm.length,
+        insert: 'link: linkWrapper(apolloLink),'
+    });
+
+    // Add Blog item to Navigation component
     const NavigationComponent = targetables.reactComponent('@magento/venia-ui/lib/components/Navigation/navigation.js');
     NavigationComponent.addImport(`import { NavigationBlogButton } from '@adobe/pwa-studio-aem-cfm-blog-extension'`);
     NavigationComponent.appendJSX('div className={bodyClassName}', '<NavigationBlogButton onClick={handleClose} />');
